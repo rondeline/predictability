@@ -1,67 +1,76 @@
 ---
-title: "Predictability_Preregistration"
-author: Rondeline Williams
-output: html_document
+title: "Predictability Preregistration"
+author: "Rondeline M. Williams"
+output:
+  html_document:
+    citation_package: natbib
+    keep_tex: false 
+    #template: svm-latex-ms2.tex 
+bibliography: /Users/rondeline/Documents/Predictability/Predictability_prereg_citations.bib
+  #pdf_document: 
+    #citation_package: natbib
+    #template: svm-latex-ms2.tex
+#bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), "bib$"))`}
 ---
 
-# Study Information 
+## **Study Information** 
 
-## Title
+### Title
 
 Effect of background noise predictability on novel word learning in preschool-age children
 
-## Description
+### Description
 
-This study explores how preschool-age children learn novel words under background noise varying in predictability.
+This study explores how preschool-age children learn novel words under background noise varying in predictability of noise onset.
 
-## Contributors
+### Contributors
 
 Rondeline M. Williams & Michael C. Frank
 
-## Affiliated Institutions
+### Affiliated Institutions
 
 Stanford University
 
-# Design Plan
+## **Design Plan**
 
-## Study Type
+### Study Type
 
 Experiment: A researcher randomly assigns treatments to study subjects, this includes field or lab experiments. This is also known as an intervention experiment and includes randomized controlled trials.
 
-## Blinding
+### Blinding
 
 For studies that involve human subjects, they will not know the treatment group to which they have been assigned.
 Personnel who analyze the data collected from the study are not aware of the treatment applied to any given group.
 
-## Study Design
+### Study Design
 
-  Participants will complete the experimental session remotely via Zoom. The experimenter will collect consent from the caregiver to conduct and record the study before preparing the screen for remote testing (including a video and audio check). Participants will first be introduced to an animated North American female character named Maggie. Maggie will tell participants that she has four new toys she would like to show them and teach participants their names. The four novel objects and names were selected from the NOUN Database (Horst & Hout, 2015). The objects are distinct in color, shape, and (presumably) texture. The labels were distinct in number of syllables (two labels had one syllable and two labels had two syllables) and phonetic quality. Object and label pairings will be counterbalanced, such that each of the four objects will have four possible labels between subjects. 
+  Participants will complete the experimental session remotely via Zoom. The experimenter will collect consent from the caregiver to conduct and record the study before preparing the screen for remote testing (including a video and audio check). Participants will first be introduced to an animated North American female character named Maggie. Maggie will tell participants that she has four new toys she would like to show them and teach participants their names. The four novel objects and names were selected from the NOUN Database [@horstNovelObjectUnusual2016]. The objects are distinct in color, shape, and (presumably) texture. The labels were distinct in number of syllables (two labels had one syllable and two labels had two syllables) and phonetic quality. Object and label pairings will be counterbalanced, such that each of the four objects will have four possible labels between subjects. 
   During the initiation phase, the objects will be presented in silence and in pairs (pairs will be counterbalanced across conditions) for five seconds. During each of the eight training trials, one novel object will appear in the center of the screen. After 1s, Maggie (audio only) will say, "Hey, look at this! This is the [novel label]. Do you see the [novel label]? Now the [novel label] is going over here. Wow, a [novel label]!" As the audio plays, the novel object will move around the screen, following the same path across trials. Each training trial will be ~13s. Each of the four novel objects will be presented twice during the training trials. The order in which they are presented will be counterbalanced.
-  Participants will be assigned to one of three conditions. In the continuous condition, training trials will be paired with sustained multitalker babble. In the intermittent-predictable condition, training trials will be paired with equally-spaced blocks of multitalker babble. Each block will be 600ms in length with 100ms of an auditory on-ramp (in which the auditory signal steadily increases to its intended sound level) and 100ms of an auditory off-ramp (in which the auditory signal steadily decreases to 0dB. Noise blocks will be equally spaced by 300ms of silence blocks. In the intermittent-unpredictable condition, training trials will be paired with 600ms of noise blocks with silence blocks of 0ms (where two noise blocks are placed next each other) and 1s.
-Multitalker babble was engineered using Audacity and Praat (citations). Five female fluent English speakers (all adult graduate students from Stanford University) were recorded separately reading one of three short children's stories. Each recording was then edited to remove all silences greater than 300ms. Then, each audio file was equalized to 60dB before being combined into one stereo track. 600ms noise blocks were randomly selected from the 53s audio and did not overlap between blocks.
+  Participants will be assigned to one of three conditions. In the continuous condition, training trials will be paired with sustained multi-talker babble. In the intermittent-predictable condition, training trials will be paired with equally-spaced blocks of multi-talker babble. Each block will be 600ms in length with 100ms of an auditory on-ramp (in which the auditory signal steadily increases to its intended sound level) and 100ms of an auditory off-ramp (in which the auditory signal steadily decreases to 0dB. Noise blocks will be equally spaced by 300ms of silence blocks. In the intermittent-unpredictable condition, training trials will be paired with 600ms of noise blocks with silence blocks of 0ms (where two noise blocks are placed next each other) and 1s.
+Multi-talker babble was engineered using Audacity and Praat [@Audacity; @boersmaPraatDoingPhonetics2020]. Five female fluent English speakers (all adult graduate students from Stanford University) were recorded separately reading one of three short children's stories. Each recording was then edited to remove all silences greater than 300ms. Then, each audio file was equalized to 60dB before being combined into one stereo track. 600ms noise blocks were randomly selected from the 53s audio and did not overlap between blocks.
   During the test phase, participants will be shown randomized and counterbalanced pairs of the four novel objects side-by-side. At the beginning of each trial, one pair will appear on the screen (one on the left side of the screen and the other on the right). After 1s of silence, Maggie (audio only) will say, "I'm looking for the [novel label]. Which one is the [novel label]?" They will be asked to point to the object Maggie is asking about. After the child points to one object, the experimenter will ask the child to say the color of the object to which they are pointing. Caregivers will be asked not to interfere with participant's answers but will be permitted to assist children with color labels if they are not yet able to label colors. Experimenters may prompt participants up to twice if they are initially unresponsive. Participants will complete a total of 12 test trials in which each of the four novel objects will be requested three times.
 
-## Randomization
+### Randomization
 
 Each of the novel objects (orange, pink, blue, and green) and labels (coodle, glark, toma, vep) will be randomized and counterbalanced across conditions and sessions, such that every possible combination will be presented. Trial order will be determined using block randomization.
 
-# Sampling Plan
+## **Sampling Plan**
 
-## Existing Data
+### Existing Data
 
 Registration prior to creation of data
 
-## Data Collection Procedures
+### Data Collection Procedures
 
 Participants will be recruited through an IRB-approved online research platform. Participants will be between 3;0 years and 5;11 years at time of test, must have normal or corrected-to-normal vision, typical hearing, no reported cognitive or neurodevelopmental delays/disorders, and must be exposed to English at least 75% of the time at home.
 
-## Sample Size
+### Sample Size
 
-For the first iteration of this study, we will recruit 50 participants to the predictable condition and 50 participants to the continuous condition. 
+For the first iteration of this study, we will recruit up to 45 participants to the predictable condition and 45 participants to the continuous condition. 
 
-## Sample Size Rationale
+### Sample Size Rationale
 
-We used the Bayes Factor Design Analysis (BFDA) to construct a sequential sample design with a maximal n (Stefan et al., 2019).
+We used the Bayes Factor Design Analysis (BFDA) to construct a sequential sample design with a maximal n [@stefanTutorialBayesFactor2019].
 
 ```{r load packages}
 library(BFDA)
@@ -75,7 +84,7 @@ sim_H1 <- BFDA.sim(
   prior = list("Cauchy", list(prior.location=0, prior.scale=sqrt(2)/2)),
   n.min = 15,
   n.max = 150,
-  boundary = 4,
+  boundary = 3,
   stepsize = 1,
   design = "sequential",
   B= 1000,
@@ -89,7 +98,7 @@ sim_H0 <- BFDA.sim(
   prior = list("Cauchy", list(prior.location = 0, prior.scale = sqrt(2)/2)),
   n.min = 15,
   n.max = 150,
-  boundary = 4,
+  boundary = 2,
   stepsize = 1,
   design = "sequential",
   B= 1000,
@@ -97,33 +106,33 @@ sim_H0 <- BFDA.sim(
   cores = 4,
   seed = 7)
   
-BFDA.analyze(sim_H1, design="sequential", n.min=15, n.max=150, boundary=4)
+BFDA.analyze(sim_H1, design="sequential", n.min=15, n.max=150, boundary=3)
 
 
-plot(sim_H1, n.min=15, boundary=c(1/4, 4), n.trajectories = 60)
-plot(sim_H0, n.min=15, boundary=c(1/3, 3))
+plot(sim_H1, n.min=15, boundary=c(1/3, 3), n.trajectories = 140)
+plot(sim_H0, n.min=15, boundary=c(1/2, 2))
 
 ```
 
-These simulations suggest a sample size of 69 to reach 80% power with an average sample number of 47 across the 1000 simulations. 
+These simulations suggest a sample size of 41 per condition to reach 80% power with an average sample number of 31 across the 1000 simulations. 
 
-## Stopping Rule
+### Stopping Rule
 
-We plan to collect data until we reach a Bayes Factor of 4 or until we collect data for 69 participants in each condition, whichever comes first. 
+We plan to collect data until we reach a Bayes Factor of 3 or until we collect data for 45 participants in each condition, whichever comes first. 
 
-# Variables 
+## **Variables** 
 
-## Manipulated Variables
+### Manipulated Variables
 
 We will manipulate the degree of background noise predictability during the training phase of the experimental session. In the intermittent-predictable condition, background noise will consist of ~16 600ms equally-spaced blocks of multitalker babble and 300ms of silence between each block. In the intermittent-unpredictable condition, background noise will consist of ~16 600ms of multitalker babble interspersed with silence intervals of 0ms-1000ms. In the continuous condition, background noise will play from the beginning to the end of each training trial. 
 
-## Measured Variables
+### Measured Variables
 
 The primary outcome measure is accuracy of identifying labels for the four presented novel objects. There will be four novel objects and four novel labels (each with a single pair across trials). Participants will be shown two of the four possible objects and asked to point to the correct object based on the spoken label. In this forced-choice design, participants have a 50% chance of correctly identifying the novel object in each test trial but a 25% chance of correctly mapping the label to its novel object. The predictor variable we will also measure is participant age. Participants will be 3;0 years to 5;11 years at time of test.
 
-# Analysis Plan
+## **Analysis Plan**
 
-## Statistical Models
+### Statistical Models
 
 ```{r load libraries}
 library(dplyr)
@@ -134,13 +143,13 @@ library(ggplot2)
 library(bayesplot)
 library(pscl)
 library(bayestestR)
+library(BayesFactor)
 library(sjPlot)
 ```
 
 ```{r load data}
-data <- read_csv("simulated_data.csv")
+data <- read.csv("simulated_data.csv")
 
-View(data)
 ```
 
 ```{r tidy data}
@@ -150,7 +159,6 @@ tidy_data <- data %>%
   group_by(participant_id, condition) %>% 
   mutate(avg_accuracy = mean(accuracy))
 
-View(tidy_data)
 ```
 
 ```{r data visualization}
@@ -163,10 +171,13 @@ ggplot(tidy_data,
   geom_jitter(width = 0.1, height = 0.1) +
   theme_classic()
 ```
+
 ```{r model data}
-pred_cont_glmer <- stan_glmer(avg_accuracy ~ condition * age + (1|age), data = tidy_data, family = gaussian)
+
+pred_cont_glmer <- stan_glmer(accuracy ~ condition * age + (1|participant_id), data = tidy_data, family = binomial)
 
 summary(pred_cont_glmer)
+
 ```
 
 ```{r bayes plot}
@@ -195,27 +206,27 @@ get_stan_glmer_reporting_values(pred_cont_glmer, "age")
 ```
 
 ```{r bayesian t-test}
-ttestBF(formula = avg_accuracy ~ condition, data = tidy_data)
+ttestBF(formula = accuracy ~ condition, data = tidy_data)
 ```
 
 ```{r graphs}
-plot_model(pred_cont_glmer, type = "pred", vars = c("avg_accuracy", "age"),
+plot_model(pred_cont_glmer, type = "pred", vars = c("accuracy", "age"),
            title = "Predicted values of total accuracy as a function of age",
            show.p = TRUE)
 
 ```
 
-## Transformations
 
-## Inference Criteria
+### Inference Criteria
 
-We will use Bayes factors for determining if our regression models and t-tests show a significant difference between H0 and H1. 
+We will use Bayes factor for determining if our regression models and t-tests show a significant difference between H0 and H1. 
 
-## Data Exclusion
+### Data Exclusion
 
 Participants who look away from the screen with both eyes for more than 50% of the 8 training trials and/or with fewer than four data points (completed fewer than four test trials) will be excluded from analysis. Trials with caregiver interference (caregiver points to the screen or tells the child the correct objects) will also be excluded.
 
-## Missing Data
+### Exploratory Analysis
 
-## Exploratory Analysis
+In addition to our registered confirmatory analysis, we plan to analyze gender and trial order effects as exploratory analyses only.
 
+## References 
