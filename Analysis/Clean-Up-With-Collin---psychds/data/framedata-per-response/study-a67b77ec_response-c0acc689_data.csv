@@ -1,0 +1,287 @@
+"response_uuid","child_hashed_id","frame_id","event_number","key","value"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","0-preload","","success",True
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","0-preload","","timeout",False
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","0-preload","","trial_type","preload"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","0-preload","","trial_index",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","0-preload","","time_elapsed",438
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","0-preload","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","1-preload","","success",True
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","1-preload","","timeout",False
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","1-preload","","trial_type","preload"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","1-preload","","trial_index",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","1-preload","","time_elapsed",1920
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","1-preload","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","2-preload","","success",True
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","2-preload","","timeout",False
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","2-preload","","trial_type","preload"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","2-preload","","trial_index",2
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","2-preload","","time_elapsed",2917
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","2-preload","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","rt",15251
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","stimulus","Welcome! Press ""next"" to continue."
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","trial_index",3
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","time_elapsed",18170
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","3-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","rt",17170
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","camId","261b3202256a5bd9da87a49c2bb96b48171af77df89dadfaa5a9962b75826902"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","micId","db1536fefcd52be4bacf41f2e533e33acc8861e1b6d435a2f2b3e60fb033967d"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","trial_type","video-config-plugin"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","trial_index",4
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","time_elapsed",35374
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","4-video-config-plugin","","plugin_version","3.0.1"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","5-consent-video","","chs_type","consent"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","5-consent-video","","trial_type","consent-video"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","5-consent-video","","trial_index",5
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","5-consent-video","","time_elapsed",57774
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","5-consent-video","","plugin_version","3.0.1"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","rt",9736
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","chs_type","consent"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","response.audio",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","response.video",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","response.Ready?",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","response.question1",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","trial_type","survey"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","trial_index",6
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","time_elapsed",67552
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","7-html-keyboard-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","rt",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","response",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","stimulus","<p>Get ready!</p>"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","trial_type","html-keyboard-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","trial_index",7
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","time_elapsed",68057
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","8-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","rt",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","response",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","stimulus","
+      <div style=""display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;"">
+          <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png"" id=""collin"" style=""width: 40vw; max-width: 500px; height: auto;"">
+      </div>
+      <div style=""display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;"">
+          <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png"" id=""room"" style=""width: 80vw; max-width: 800px; height: auto;"">
+      </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","trial_index",8
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","time_elapsed",91060
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","9-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","rt",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","response",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/animals.png"" id=""animals"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/vehicles.png"" id=""vehicles"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/green.png"" id=""green"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","trial_index",9
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","time_elapsed",114561
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","11-html-keyboard-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","rt",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","response",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin: 50px; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/dog.png"" id=""dog"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin: 50px; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/convertible.png"" id=""convertible"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin: 50px; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/frog.png"" id=""frog"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","trial_index",10
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","time_elapsed",140564
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","12-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","rt",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","response",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","stimulus","<p>Trials complete! Please wait...</p>"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","trial_type","html-keyboard-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","trial_index",11
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","time_elapsed",141067
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","13-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","rt",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","response",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","stimulus","
+        <div style=""display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;"">
+          <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png"" id=""room"" style=""width: 80vw; max-width: 800px; height: auto;"">
+      </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","trial_index",12
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","time_elapsed",152072
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","14-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","rt",6575
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","choice_0","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/turtle.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","trial_index",13
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","time_elapsed",158651
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","selected_item","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","stimulus_item","turtle"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","15-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","rt",4520
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","choice_0","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","response",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/bus.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","trial_index",14
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","time_elapsed",163173
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","selected_item","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","stimulus_item","bus"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","16-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","rt",1555
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","choice_0","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/lion.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","trial_index",15
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","time_elapsed",164729
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","selected_item","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","stimulus_item","lion"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","17-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","rt",1791
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","choice_0","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","response",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/ambulance.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","trial_index",16
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","time_elapsed",166523
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","selected_item","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","stimulus_item","ambulance"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","18-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","rt",1500
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","choice_0","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/horse.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","trial_index",17
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","time_elapsed",168026
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","selected_item","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","stimulus_item","horse"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","19-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","rt",1040
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/penguin.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","trial_index",18
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","time_elapsed",169069
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","selected_item","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","stimulus_item","penguin"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","20-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","rt",1742
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","choice_0","box_dog"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","choice_1","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","response",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/truck.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","trial_index",19
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","time_elapsed",170814
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","selected_item","box_car"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","stimulus_item","truck"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","21-html-button-response","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","rt",1141
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/car.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","trial_index",20
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","time_elapsed",171959
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","condition_label","uphorn"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","22-survey","","condition_number",1
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","rt",10892
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","response",0
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","stimulus","
+        <div style=""display: flex; justify-content: center; align-items: flex-start; gap: 15px; margin-top: 20px; margin-bottom: 100px;"">
+        <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png"" style=""width: 40vw; max-width: 500px; height: auto;"">
+        <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/ribbon.png"" style=""width: 20vw; max-width: 200px; height: auto;"">
+        </div>
+    "
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","trial_type","html-button-response"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","trial_index",21
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","time_elapsed",182854
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","23-survey","","plugin_version","2.0.0"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","rt",14765
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","chs_type","consent"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","response.race.0","African/Black"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","response.email","TEST@TEST.EDU"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","response.english",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","response.counting",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","response.education",""
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","trial_type","survey"
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","trial_index",22
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","time_elapsed",197660
+"c0acc689-1fb8-4776-856b-25981255fc56","WJEBN2","24-survey","","plugin_version","2.0.0"

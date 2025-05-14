@@ -1,0 +1,1463 @@
+[
+{
+	"response": {
+		"id": "317453",
+		"uuid": "a79734d1-7ce3-49cf-9a6f-a5e50ea73e03",
+		"date_created": "2025-04-26 03:44:49.547632+00:00",
+		"completed": true,
+		"withdrawn": false,
+		"eligibility": [
+			"Eligible"
+		],
+		"parent_feedback": null,
+		"birthdate_difference": 0,
+		"video_privacy": "private",
+		"databrary": "no",
+		"is_preview": true,
+		"sequence": [
+			"0-preload",
+			"1-preload",
+			"2-preload",
+			"3-html-button-response",
+			"4-video-config-plugin",
+			"5-consent-video",
+			"7-html-keyboard-response",
+			"8-html-button-response",
+			"9-html-button-response",
+			"11-html-keyboard-response",
+			"12-html-button-response",
+			"13-html-button-response",
+			"14-html-button-response",
+			"15-html-button-response",
+			"16-html-button-response",
+			"17-html-button-response",
+			"18-html-button-response",
+			"19-html-button-response",
+			"20-html-button-response",
+			"21-html-button-response",
+			"22-survey",
+			"23-survey",
+			"24-survey"
+		],
+		"conditions": [],
+		"researcher_payment_status": "",
+		"researcher_session_status": "",
+		"researcher_star": false
+	},
+	"consent": {
+		"ruling": "accepted",
+		"arbiter": "Yasmine  Caraiscos",
+		"time": "2025-04-29 23:37",
+		"comment": null
+	},
+	"study": {
+		"uuid": "a67b77ec-df98-4a88-9ec6-fbf92d393981"
+	},
+	"participant": {
+		"hashed_id": "RJZWW5"
+	},
+	"child": {
+		"hashed_id": "LA3Nd4",
+		"age_rounded": "1950",
+		"gender": "m",
+		"age_at_birth": "38 weeks",
+		"language_list": "en",
+		"condition_list": "",
+		"additional_information": ""
+	},
+	"exp_data": [
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 0,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 750,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 1,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 13147,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 2,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 23612,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 1873,
+			"response": 0,
+			"stimulus": "Welcome! Press \"next\" to continue.",
+			"trial_type": "html-button-response",
+			"trial_index": 3,
+			"time_elapsed": 25487,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 52473,
+			"camId": "63ab8d8b0d04ffeb293114ac8ffa80a5177a6c5e8ac487a7b5239aa221bfb419",
+			"micId": "1aa710fc10c0d0fea396e59a9d35b51ebbddaec34b3c7b223fa46b048c4e3ed4",
+			"trial_type": "video-config-plugin",
+			"trial_index": 4,
+			"time_elapsed": 77990,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"chs_type": "consent",
+			"trial_type": "consent-video",
+			"trial_index": 5,
+			"time_elapsed": 141462,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"rt": 11750,
+			"chs_type": "consent",
+			"response": {
+				"audio": null,
+				"video": null,
+				"Ready?": null,
+				"question1": null
+			},
+			"trial_type": "survey",
+			"trial_index": 6,
+			"time_elapsed": 153244,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Get ready!</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 7,
+			"time_elapsed": 153746,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" id=\"collin\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n      </div>\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 8,
+			"time_elapsed": 176749,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/animals.png\" id=\"animals\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/vehicles.png\" id=\"vehicles\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/green.png\" id=\"green\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 9,
+			"time_elapsed": 200254,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/dog.png\" id=\"dog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/convertible.png\" id=\"convertible\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/frog.png\" id=\"frog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 10,
+			"time_elapsed": 226262,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Trials complete! Please wait...</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 11,
+			"time_elapsed": 226764,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 12,
+			"time_elapsed": 237774,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 9807,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/lion.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 13,
+			"time_elapsed": 247584,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 1733,
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/turtle.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 14,
+			"time_elapsed": 249319,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 1797,
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/car.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 15,
+			"time_elapsed": 251120,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 880,
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/truck.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 16,
+			"time_elapsed": 252003,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 7030,
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ambulance.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 17,
+			"time_elapsed": 259036,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 3496,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/horse.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 18,
+			"time_elapsed": 262536,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 4030,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/penguin.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 19,
+			"time_elapsed": 266568,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 5182,
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/bus.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 20,
+			"time_elapsed": 271752,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 58680,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; align-items: flex-start; gap: 15px; margin-top: 20px; margin-bottom: 100px;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ribbon.png\" style=\"width: 20vw; max-width: 200px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 21,
+			"time_elapsed": 330446,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 25633,
+			"chs_type": "consent",
+			"response": {
+				"race": [
+					"Caucasian/White"
+				],
+				"email": "yasmine.caraiscos@gmail.com",
+				"english": "All of the time",
+				"counting": "Are a little bothered",
+				"education": "Graduate or professional degree"
+			},
+			"trial_type": "survey",
+			"trial_index": 22,
+			"time_elapsed": 356172,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 45691,
+			"chs_type": "exit",
+			"response": {
+				"feedback": null,
+				"birthDate": "2020-01-01",
+				"useOfMedia": "private",
+				"withdrawal": false,
+				"databraryShare": "no"
+			},
+			"trial_type": "survey",
+			"trial_index": 23,
+			"time_elapsed": 401910,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 3698,
+			"chs_type": "consent",
+			"response": {
+				"question1": null,
+				"question2": null,
+				"question3": null
+			},
+			"trial_type": "survey",
+			"trial_index": 24,
+			"time_elapsed": 405620,
+			"plugin_version": "2.0.0"
+		}
+	]
+},
+{
+	"response": {
+		"id": "319121",
+		"uuid": "e58baabd-8ebc-4756-aae2-b5f9ed04e89f",
+		"date_created": "2025-04-30 18:31:24.224316+00:00",
+		"completed": true,
+		"withdrawn": false,
+		"eligibility": [
+			"Ineligible_TooYoung"
+		],
+		"parent_feedback": null,
+		"birthdate_difference": 9,
+		"video_privacy": "private",
+		"databrary": "no",
+		"is_preview": true,
+		"sequence": [
+			"0-preload",
+			"1-preload",
+			"2-preload",
+			"3-html-button-response",
+			"4-video-config-plugin",
+			"5-consent-video",
+			"7-html-keyboard-response",
+			"8-html-button-response",
+			"9-html-button-response",
+			"10-html-button-response",
+			"11-html-keyboard-response",
+			"12-html-button-response",
+			"13-html-button-response",
+			"14-html-button-response",
+			"15-html-button-response",
+			"16-html-button-response",
+			"17-html-button-response",
+			"18-html-button-response",
+			"19-html-button-response",
+			"20-html-button-response",
+			"21-html-button-response",
+			"22-survey",
+			"23-survey",
+			"24-survey"
+		],
+		"conditions": [],
+		"researcher_payment_status": "",
+		"researcher_session_status": "",
+		"researcher_star": false
+	},
+	"consent": {
+		"ruling": "accepted",
+		"arbiter": "Rondeline  Williams",
+		"time": "2025-04-30 19:24",
+		"comment": null
+	},
+	"study": {
+		"uuid": "a67b77ec-df98-4a88-9ec6-fbf92d393981"
+	},
+	"participant": {
+		"hashed_id": "Z3W6dH"
+	},
+	"child": {
+		"hashed_id": "WJEBN2",
+		"age_rounded": "660",
+		"gender": "m",
+		"age_at_birth": "37 weeks",
+		"language_list": "en",
+		"condition_list": "",
+		"additional_information": ""
+	},
+	"exp_data": [
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 0,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 78,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 1,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 1587,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 2,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 4581,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 1494,
+			"response": 0,
+			"stimulus": "Welcome! Press \"next\" to continue.",
+			"trial_type": "html-button-response",
+			"trial_index": 3,
+			"time_elapsed": 6078,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 11000,
+			"camId": "261b3202256a5bd9da87a49c2bb96b48171af77df89dadfaa5a9962b75826902",
+			"micId": "db1536fefcd52be4bacf41f2e533e33acc8861e1b6d435a2f2b3e60fb033967d",
+			"trial_type": "video-config-plugin",
+			"trial_index": 4,
+			"time_elapsed": 17112,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"chs_type": "consent",
+			"trial_type": "consent-video",
+			"trial_index": 5,
+			"time_elapsed": 30190,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"rt": 2154,
+			"chs_type": "consent",
+			"response": {
+				"audio": null,
+				"video": null,
+				"Ready?": null,
+				"question1": null
+			},
+			"trial_type": "survey",
+			"trial_index": 6,
+			"time_elapsed": 32387,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Get ready!</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 7,
+			"time_elapsed": 32891,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" id=\"collin\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n      </div>\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 8,
+			"time_elapsed": 55896,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/animals.png\" id=\"animals\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/vehicles.png\" id=\"vehicles\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/green.png\" id=\"green\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 9,
+			"time_elapsed": 79402,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/dog.png\" id=\"dog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/convertible.png\" id=\"convertible\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/frog.png\" id=\"frog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 10,
+			"time_elapsed": 105406,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Trials complete! Please wait...</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 11,
+			"time_elapsed": 105908,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 12,
+			"time_elapsed": 116913,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 6151,
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/penguin.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 13,
+			"time_elapsed": 123069,
+			"stimulus_item": "penguin",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 2423,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/car.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 14,
+			"time_elapsed": 125496,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1028,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/turtle.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 15,
+			"time_elapsed": 126526,
+			"stimulus_item": "turtle",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1203,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ambulance.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 16,
+			"time_elapsed": 127733,
+			"stimulus_item": "ambulance",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1316,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/truck.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 17,
+			"time_elapsed": 129054,
+			"stimulus_item": "truck",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1337,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/lion.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 18,
+			"time_elapsed": 130395,
+			"stimulus_item": "lion",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 963,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/horse.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 19,
+			"time_elapsed": 131362,
+			"stimulus_item": "horse",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 965,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/bus.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 20,
+			"time_elapsed": 132330,
+			"stimulus_item": "bus",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 8981,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; align-items: flex-start; gap: 15px; margin-top: 20px; margin-bottom: 100px;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ribbon.png\" style=\"width: 20vw; max-width: 200px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 21,
+			"time_elapsed": 141315,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 9868,
+			"chs_type": "consent",
+			"response": {
+				"race": [
+					"African/Black"
+				],
+				"email": "test@test.edu",
+				"english": null,
+				"counting": null,
+				"education": null
+			},
+			"trial_type": "survey",
+			"trial_index": 22,
+			"time_elapsed": 151218,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 11643,
+			"chs_type": "exit",
+			"response": {
+				"feedback": null,
+				"birthDate": "2023-07-23",
+				"useOfMedia": "private",
+				"withdrawal": false,
+				"databraryShare": "no"
+			},
+			"trial_type": "survey",
+			"trial_index": 23,
+			"time_elapsed": 162887,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 2260,
+			"chs_type": "consent",
+			"response": {
+				"question1": null,
+				"question2": null,
+				"question3": null
+			},
+			"trial_type": "survey",
+			"trial_index": 24,
+			"time_elapsed": 165158,
+			"plugin_version": "2.0.0"
+		}
+	]
+},
+{
+	"response": {
+		"id": "319171",
+		"uuid": "c0acc689-1fb8-4776-856b-25981255fc56",
+		"date_created": "2025-04-30 19:37:53.440923+00:00",
+		"completed": true,
+		"withdrawn": false,
+		"eligibility": [
+			"Ineligible_TooYoung"
+		],
+		"parent_feedback": null,
+		"birthdate_difference": 9,
+		"video_privacy": "private",
+		"databrary": "no",
+		"is_preview": true,
+		"sequence": [
+			"0-preload",
+			"1-preload",
+			"2-preload",
+			"3-html-button-response",
+			"4-video-config-plugin",
+			"5-consent-video",
+			"7-html-keyboard-response",
+			"8-html-button-response",
+			"9-html-button-response",
+			"11-html-keyboard-response",
+			"12-html-button-response",
+			"13-html-button-response",
+			"14-html-button-response",
+			"15-html-button-response",
+			"16-html-button-response",
+			"17-html-button-response",
+			"18-html-button-response",
+			"19-html-button-response",
+			"20-html-button-response",
+			"21-html-button-response",
+			"22-survey",
+			"23-survey",
+			"24-survey"
+		],
+		"conditions": [],
+		"researcher_payment_status": "",
+		"researcher_session_status": "",
+		"researcher_star": false
+	},
+	"consent": {
+		"ruling": "accepted",
+		"arbiter": "Rondeline  Williams",
+		"time": "2025-04-30 19:42",
+		"comment": null
+	},
+	"study": {
+		"uuid": "a67b77ec-df98-4a88-9ec6-fbf92d393981"
+	},
+	"participant": {
+		"hashed_id": "Z3W6dH"
+	},
+	"child": {
+		"hashed_id": "WJEBN2",
+		"age_rounded": "660",
+		"gender": "m",
+		"age_at_birth": "37 weeks",
+		"language_list": "en",
+		"condition_list": "",
+		"additional_information": ""
+	},
+	"exp_data": [
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 0,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 438,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 1,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 1920,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 2,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 2917,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 15251,
+			"response": 0,
+			"stimulus": "Welcome! Press \"next\" to continue.",
+			"trial_type": "html-button-response",
+			"trial_index": 3,
+			"time_elapsed": 18170,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 17170,
+			"camId": "261b3202256a5bd9da87a49c2bb96b48171af77df89dadfaa5a9962b75826902",
+			"micId": "db1536fefcd52be4bacf41f2e533e33acc8861e1b6d435a2f2b3e60fb033967d",
+			"trial_type": "video-config-plugin",
+			"trial_index": 4,
+			"time_elapsed": 35374,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"chs_type": "consent",
+			"trial_type": "consent-video",
+			"trial_index": 5,
+			"time_elapsed": 57774,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"rt": 9736,
+			"chs_type": "consent",
+			"response": {
+				"audio": null,
+				"video": null,
+				"Ready?": null,
+				"question1": null
+			},
+			"trial_type": "survey",
+			"trial_index": 6,
+			"time_elapsed": 67552,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Get ready!</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 7,
+			"time_elapsed": 68057,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" id=\"collin\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n      </div>\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 8,
+			"time_elapsed": 91060,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/animals.png\" id=\"animals\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/vehicles.png\" id=\"vehicles\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/green.png\" id=\"green\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 9,
+			"time_elapsed": 114561,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/dog.png\" id=\"dog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/convertible.png\" id=\"convertible\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/frog.png\" id=\"frog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 10,
+			"time_elapsed": 140564,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Trials complete! Please wait...</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 11,
+			"time_elapsed": 141067,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 12,
+			"time_elapsed": 152072,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 6575,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/turtle.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 13,
+			"time_elapsed": 158651,
+			"selected_item": "box_dog",
+			"stimulus_item": "turtle",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 4520,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/bus.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 14,
+			"time_elapsed": 163173,
+			"selected_item": "box_car",
+			"stimulus_item": "bus",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1555,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/lion.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 15,
+			"time_elapsed": 164729,
+			"selected_item": "box_dog",
+			"stimulus_item": "lion",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1791,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ambulance.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 16,
+			"time_elapsed": 166523,
+			"selected_item": "box_car",
+			"stimulus_item": "ambulance",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1500,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/horse.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 17,
+			"time_elapsed": 168026,
+			"selected_item": "box_dog",
+			"stimulus_item": "horse",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1040,
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/penguin.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 18,
+			"time_elapsed": 169069,
+			"selected_item": "box_dog",
+			"stimulus_item": "penguin",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1742,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/truck.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 19,
+			"time_elapsed": 170814,
+			"selected_item": "box_car",
+			"stimulus_item": "truck",
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 1141,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/car.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 20,
+			"time_elapsed": 171959,
+			"plugin_version": "2.0.0",
+			"condition_label": "uphorn",
+			"condition_number": 1
+		},
+		{
+			"rt": 10892,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; align-items: flex-start; gap: 15px; margin-top: 20px; margin-bottom: 100px;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ribbon.png\" style=\"width: 20vw; max-width: 200px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 21,
+			"time_elapsed": 182854,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 14765,
+			"chs_type": "consent",
+			"response": {
+				"race": [
+					"African/Black"
+				],
+				"email": "TEST@TEST.EDU",
+				"english": null,
+				"counting": null,
+				"education": null
+			},
+			"trial_type": "survey",
+			"trial_index": 22,
+			"time_elapsed": 197660,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 14374,
+			"chs_type": "exit",
+			"response": {
+				"feedback": null,
+				"birthDate": "2023-07-23",
+				"useOfMedia": "private",
+				"withdrawal": false,
+				"databraryShare": "no"
+			},
+			"trial_type": "survey",
+			"trial_index": 23,
+			"time_elapsed": 212056,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 1424,
+			"chs_type": "consent",
+			"response": {
+				"question1": null,
+				"question2": null,
+				"question3": null
+			},
+			"trial_type": "survey",
+			"trial_index": 24,
+			"time_elapsed": 213494,
+			"plugin_version": "2.0.0"
+		}
+	]
+},
+{
+	"response": {
+		"id": "319336",
+		"uuid": "def8cfac-bd76-429b-88f1-c8f3ce73d4ef",
+		"date_created": "2025-05-01 16:28:05.707423+00:00",
+		"completed": true,
+		"withdrawn": false,
+		"eligibility": [
+			"Eligible"
+		],
+		"parent_feedback": null,
+		"birthdate_difference": 0,
+		"video_privacy": "private",
+		"databrary": "no",
+		"is_preview": true,
+		"sequence": [
+			"0-preload",
+			"2-preload",
+			"3-html-button-response",
+			"4-video-config-plugin",
+			"5-consent-video",
+			"7-start-record-plugin",
+			"8-html-keyboard-response",
+			"9-html-button-response",
+			"10-html-button-response",
+			"12-html-keyboard-response",
+			"13-html-button-response",
+			"14-html-button-response",
+			"15-html-button-response",
+			"16-html-button-response",
+			"17-html-button-response",
+			"18-html-button-response",
+			"19-html-button-response",
+			"20-html-button-response",
+			"21-html-button-response",
+			"22-stop-record-plugin",
+			"23-html-button-response",
+			"24-survey",
+			"25-survey",
+			"26-survey"
+		],
+		"conditions": [],
+		"researcher_payment_status": "",
+		"researcher_session_status": "",
+		"researcher_star": false
+	},
+	"consent": {
+		"ruling": "accepted",
+		"arbiter": "Rondeline  Williams",
+		"time": "2025-05-01 16:38",
+		"comment": null
+	},
+	"study": {
+		"uuid": "a67b77ec-df98-4a88-9ec6-fbf92d393981"
+	},
+	"participant": {
+		"hashed_id": "RJZWW5"
+	},
+	"child": {
+		"hashed_id": "LA3Nd4",
+		"age_rounded": "1950",
+		"gender": "m",
+		"age_at_birth": "38 weeks",
+		"language_list": "en",
+		"condition_list": "",
+		"additional_information": ""
+	},
+	"exp_data": [
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 0,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 10,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 1,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 1210,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"success": true,
+			"timeout": false,
+			"trial_type": "preload",
+			"trial_index": 2,
+			"failed_audio": [],
+			"failed_video": [],
+			"time_elapsed": 1238,
+			"failed_images": [],
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 13860,
+			"response": 0,
+			"stimulus": "Welcome! Press \"next\" to continue.",
+			"trial_type": "html-button-response",
+			"trial_index": 3,
+			"time_elapsed": 15099,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 8072,
+			"camId": "63ab8d8b0d04ffeb293114ac8ffa80a5177a6c5e8ac487a7b5239aa221bfb419",
+			"micId": "1aa710fc10c0d0fea396e59a9d35b51ebbddaec34b3c7b223fa46b048c4e3ed4",
+			"trial_type": "video-config-plugin",
+			"trial_index": 4,
+			"time_elapsed": 23200,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"chs_type": "consent",
+			"trial_type": "consent-video",
+			"trial_index": 5,
+			"time_elapsed": 115500,
+			"plugin_version": "3.0.1"
+		},
+		{
+			"rt": 7865,
+			"chs_type": "consent",
+			"response": {
+				"audio": null,
+				"video": null,
+				"Ready?": null,
+				"question1": null
+			},
+			"trial_type": "survey",
+			"trial_index": 6,
+			"time_elapsed": 123416,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"trial_type": "start-record-plugin",
+			"trial_index": 7,
+			"time_elapsed": 123902,
+			"plugin_version": null
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Get ready!</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 8,
+			"time_elapsed": 124408,
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" id=\"collin\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n      </div>\n      <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 9,
+			"time_elapsed": 147412,
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/animals.png\" id=\"animals\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/vehicles.png\" id=\"vehicles\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/green.png\" id=\"green\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 10,
+			"time_elapsed": 170915,
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/dog.png\" id=\"dog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/convertible.png\" id=\"convertible\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n        <div style=\"display: flex; justify-content: center; margin: 50px; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/frog.png\" id=\"frog\" style=\"width: 50vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 11,
+			"time_elapsed": 196917,
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "<p>Trials complete! Please wait...</p>",
+			"trial_type": "html-keyboard-response",
+			"trial_index": 12,
+			"time_elapsed": 197422,
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": null,
+			"response": null,
+			"stimulus": "\n        <div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;\">\n          <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png\" id=\"room\" style=\"width: 80vw; max-width: 800px; height: auto;\">\n      </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 13,
+			"time_elapsed": 208426,
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 3269,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/car.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 14,
+			"time_elapsed": 211697,
+			"selected_item": "box_car",
+			"stimulus_item": "car",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 3248,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ambulance.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 15,
+			"time_elapsed": 214947,
+			"selected_item": "box_car",
+			"stimulus_item": "ambulance",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 2882,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/truck.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 16,
+			"time_elapsed": 217831,
+			"selected_item": "box_car",
+			"stimulus_item": "truck",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 2982,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/bus.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 17,
+			"time_elapsed": 220814,
+			"selected_item": "box_car",
+			"stimulus_item": "bus",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 3049,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/bird.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 18,
+			"time_elapsed": 223864,
+			"selected_item": "box_dog",
+			"stimulus_item": "bird",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 2949,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/horse.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 19,
+			"time_elapsed": 226814,
+			"selected_item": "box_dog",
+			"stimulus_item": "horse",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 3182,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/lion.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 20,
+			"time_elapsed": 229997,
+			"selected_item": "box_dog",
+			"stimulus_item": "lion",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"rt": 2998,
+			"choice_0": "box_dog",
+			"choice_1": "box_car",
+			"response": 1,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; margin-top: 5px;\">\n            <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/turtle.png\" style=\"width: 20vw; max-width: 300px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 21,
+			"time_elapsed": 232997,
+			"selected_item": "box_car",
+			"stimulus_item": "turtle",
+			"plugin_version": "2.0.0",
+			"condition_label": "phorn",
+			"condition_number": 0
+		},
+		{
+			"trial_type": "stop-record-plugin",
+			"trial_index": 22,
+			"time_elapsed": 245366,
+			"plugin_version": null
+		},
+		{
+			"rt": 9265,
+			"response": 0,
+			"stimulus": "\n        <div style=\"display: flex; justify-content: center; align-items: flex-start; gap: 15px; margin-top: 20px; margin-bottom: 100px;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png\" style=\"width: 40vw; max-width: 500px; height: auto;\">\n        <img src=\"https://raw.githubusercontent.com/rondeline/predictability/master/img/ribbon.png\" style=\"width: 20vw; max-width: 200px; height: auto;\">\n        </div>\n    ",
+			"trial_type": "html-button-response",
+			"trial_index": 23,
+			"time_elapsed": 254632,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 10528,
+			"chs_type": "consent",
+			"response": {
+				"race": [
+					"Caucasian/White"
+				],
+				"email": "yasmine.caraiscos@gmail.com",
+				"english": "All of the time",
+				"counting": "Are a little bothered",
+				"education": "Graduate or professional degree"
+			},
+			"trial_type": "survey",
+			"trial_index": 24,
+			"time_elapsed": 265202,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 18411,
+			"chs_type": "exit",
+			"response": {
+				"feedback": null,
+				"birthDate": "2020-01-01",
+				"useOfMedia": "private",
+				"withdrawal": false,
+				"databraryShare": "no"
+			},
+			"trial_type": "survey",
+			"trial_index": 25,
+			"time_elapsed": 283638,
+			"plugin_version": "2.0.0"
+		},
+		{
+			"rt": 1709,
+			"chs_type": "consent",
+			"response": {
+				"question1": null,
+				"question2": null,
+				"question3": null
+			},
+			"trial_type": "survey",
+			"trial_index": 26,
+			"time_elapsed": 285360,
+			"plugin_version": "2.0.0"
+		}
+	]
+}
+]
