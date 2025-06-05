@@ -1,0 +1,54 @@
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 2em 2em 2em 3em;
+  color: #333;
+}
+
+.jspsych-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.25em;
+}
+
+button, input[type="button"] {
+  font-size: 1.2em;
+  padding: 0.5em 1.5em;
+  margin: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #0077cc;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover, input[type="button"]:hover {
+  background-color: #005fa3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+
+.jspsych-btn {
+  display: inline-block;
+  margin: 0.5em;
+}
+
+#jspsych-target {
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.jspsych-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
