@@ -2,9 +2,11 @@
 library(tidyverse)
 library(jsonlite)
 library(stringr)
+library(ggthemes)
+library(binom)
 
 ## Read Data 
-data <- fromJSON("all_responses_identifiable.json")
+data <- fromJSON("predictability_6325.json")
 
 unnest_data <- data |> 
   unnest(exp_data, names_sep = "_")
@@ -67,10 +69,123 @@ survey <- flat |>
 
 join_data <- renaming_data |> 
   left_join(survey, by = "child_hashed_id") |> 
-  filter(!is.na(stimulus_item))
+  filter(!is.na(stimulus_item),
+         as.Date(date_created) >= as.Date("2025-05-30")) |> 
+  mutate(age_years = case_when(age >= 3 & age < 4 ~ 3,
+                               age >= 4 & age < 5 ~ 4,
+                               age >= 5 & age < 6 ~ 5),
+         condition_label = case_when(condition_label == "uphorn" ~ "Unpredictable Noise",
+                                     condition_label == "phorn" ~ "Predictable Noise",
+                                     condition_label == "pstore" ~ "Predictable Speech",
+                                     condition_label == "upstore" ~ "Unpredictable Speech",
+                                     condition_label == "silence" ~ "Silence"))
 
 View(join_data)
 
+# Analysis
+full_analysis <- join_data |>
+  filter(stimulus_item != "penguin") |> 
+  mutate(answer = case_when(stimulus_item == "car" ~ "box_car",
+                            stimulus_item == "ambulance" ~ "box_car",
+                            stimulus_item == "bus" ~ "box_car",
+                            stimulus_item == "truck" ~ "box_car",
+                            stimulus_item == "horse" ~ "box_dog",
+                            stimulus_item == "lion" ~ "box_dog",
+                            stimulus_item == "turtle" ~ "box_car",
+                            stimulus_item == "bird" ~ "box_car"),
+         correct = case_when(selected_item == answer ~ 1,
+                             TRUE ~ 0))
+
+View(analysis)
+
+target_analysis <- join_data |> 
+  filter(stimulus_item %in% c("bird", "turtle")) |> 
+  mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
+                            stimulus_item == "turtle" ~ "box_car"),
+         correct = case_when(selected_item == answer ~ 1,
+                             TRUE ~ 0)) |> 
+  group_by(condition_label) |> 
+  summarise(mean_correct = mean(correct),
+            ci_l = binom.bayes(x = sum(correct), n = n())$lower,
+            ci_u = binom.bayes(x = sum(correct), n = n())$upper,
+            n = n()) |> 
+  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE))
+
+View(target_analysis)
+
+# Data Viz
+ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
+  ylim(0,1) +
+  xlab("Condition") +
+  ylab("Accuracy") +
+  geom_hline(yintercept = 0.5, linetype = "dashed") +
+  coord_flip() +
+  theme_few() +
+  theme(legend.position = "none")
+
+grouped_analysis <- join_data |> 
+  filter(stimulus_item %in% c("bird", "turtle")) |> 
+  mutate(answer = "box_car",
+         correct = as.integer(selected_item == answer),
+         predictability = case_when(
+           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
+           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
+           TRUE ~ "Silence")) |> 
+  group_by(child_hashed_id, predictability) |> 
+  summarise(subject_mean = mean(correct), .groups = "drop") |> 
+  group_by(predictability) |> 
+  summarise(
+    mean_correct = mean(subject_mean),
+    ci_l = binom.bayes(x = sum(subject_mean), n = n())$lower,
+    ci_u = binom.bayes(x = sum(subject_mean), n = n())$upper,
+    n = n()) |> 
+  mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
+  
+  View(grouped_analysis)
+  
+# Data Viz
+ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
+  ylim(0,1) +
+  xlab("Condition") +
+  ylab("Accuracy") +
+  geom_hline(yintercept = 0.5, linetype = "dashed") +
+  coord_flip() +
+  theme_few()
+
+ggplot(grouped_analysis, aes(x = predictability, y = mean_correct, fill = predictability)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
+  #geom_errorbar(aes(ymin = ci_l, ymax = ci_u),
+                #position = position_dodge(width = 0.9), width = 0.3) +
+  ylim(0,1) +
+  xlab("Condition") +
+  ylab("Accuracy") +
+  geom_hline(yintercept = 0.5, linetype = "dashed") +
+  theme_few() +
+  theme(legend.position = "none")
+
+age_analysis <- join_data |> 
+  filter(stimulus_item %in% c("bird", "turtle")) |> 
+  mutate(answer = "box_car",
+         correct = as.integer(selected_item == answer),
+         predictability = case_when(
+           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
+           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
+           TRUE ~ "Silence")) |> 
+  group_by(child_hashed_id, predictability, age_years) |>
+  summarise(subject_mean = mean(correct), .groups = "drop") |> 
+  group_by(predictability, age_years) |> 
+  summarise(
+    mean_correct = mean(subject_mean),
+    ci_l = binom.bayes(x = sum(subject_mean), n = n())$lower,
+    ci_u = binom.bayes(x = sum(subject_mean), n = n())$upper,
+    n = n()) |> 
+  mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
+
+View(age_analysis)
+  
+# Emails to pay participants 
 emails <- survey |> 
   filter(item == "email")
 
