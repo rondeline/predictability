@@ -17,6 +17,7 @@ const baseDir = "https://raw.githubusercontent.com/rondeline/predictability/mast
 
 /* define media object */
 const media = {
+  /*images*/
   bird: baseDir + "jspsych/img/bird.png",
   box: baseDir + "jspsych/img/box.png",
   bus: baseDir + "jspsych/img/bus.png",
@@ -42,17 +43,34 @@ const media = {
   tractor: baseDir + "jspsych/img/tractor.png",
   truck: baseDir + "jspsych/img/truck.png",
   turtle: baseDir + "jspsych/img/turtle.png",
-  whale: baseDir + "jspsych/img/whale.png"
+  whale: baseDir + "jspsych/img/whale.png",
+  collin: baseDir + "jspsych/img/collin.png",
+  room: baseDir + "jspsych/img/room.png",
+
+  /*audio*/
+  uphorn: baseDir + "jspsych/mp3/up_horn_5snr.mp3",
+  phorn: baseDir + "jspsych/mp3/p_horn_5snr.mp3",
+  target: baseDir + "jspsych/mp3/target.mp3"
+
 };
 
 /* preload images */
-var preload = {
+var img_preload = {
   type: jsPsychPreload,
   show_progress_bar: true,
   message: '<p>Loading pictures...</p>',
   images: Object.values(media)
 };
-timeline.push(preload);
+timeline.push(img_preload);
+
+/* preload audio */
+var aud_preload = {
+  type: jsPsychPreload,
+  show_progress_bar: true,
+  message: '<p>Loading audio...</p>',
+  audio: Object.values(media)
+};
+timeline.push(aud_preload);
 
 /* welcome trial */
 var welcome = {
@@ -87,6 +105,14 @@ var consent = {
 };
 timeline.push(consent);
 
+/* instructions */
+var instructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <h2>Instructions</h2>
+  `,
+};
+
 /* define all trials as timeline variables */
 var trial_variables = [
   { stimulus_image: media.bird },
@@ -113,7 +139,12 @@ var trial_variables = [
   { stimulus_image: media.tractor },
   { stimulus_image: media.truck },
   { stimulus_image: media.turtle },
-  { stimulus_image: media.whale }
+  { stimulus_image: media.whale },
+  { stimulus_image: media.collin },
+  { stimulus_image: media.room },
+  { stimulus_audio: media.uphorn },
+  { stimulus_audio: media.phorn },
+  { stimulus_audio: media.target }
 ];
 
 /* create the randomized timeline */
