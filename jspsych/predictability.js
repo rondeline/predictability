@@ -59,7 +59,19 @@ var img_preload = {
   type: jsPsychPreload,
   show_progress_bar: true,
   message: '<p>Loading pictures...</p>',
-  images: Object.values(media)
+  images: [
+    media.bird, media.box, media.bus, media.butterfly, media.car, media.cat,
+    media.convertible, media.dog, media.fiat, media.fish, media.frog, media.horse,
+    media.iguana, media.ladybug, media.lion, media.minivan, media.octopus,
+    media.pickup, media.pig, media.seahorse, media.suv, media.tractor_truck,
+    media.tractor, media.truck, media.turtle, media.whale, media.collin, media.room
+  ],
+  on_error: function(file) {
+    console.error('Error loading image:', file);
+  },
+  on_success: function(file) {
+    console.log('Successfully loaded image:', file);
+  }
 };
 timeline.push(img_preload);
 
@@ -68,7 +80,9 @@ var aud_preload = {
   type: jsPsychPreload,
   show_progress_bar: true,
   message: '<p>Loading audio...</p>',
-  audio: Object.values(media)
+  audio: [
+    media.uphorn, media.phorn, media.target
+  ]
 };
 timeline.push(aud_preload);
 
@@ -105,14 +119,6 @@ var consent = {
 };
 timeline.push(consent);
 
-/* instructions */
-var instructions = {
-  type: jsPsychHtmlButtonResponse,
-  stimulus: `
-    <h2>Instructions</h2>
-  `,
-};
-
 /* define all trials as timeline variables */
 var trial_variables = [
   { stimulus_image: media.bird },
@@ -147,18 +153,103 @@ var trial_variables = [
   { stimulus_audio: media.target }
 ];
 
+/* directions */
+var directions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <h2>Directions</h2>
+    <p>In this study, you will be shown a picture of a person and a sound. Your task is to predict whether the person will move or not. If you think the person will move, press "a". If you think the person will not move, press "l".</p>
+    <p>Press "next" to continue.</p>
+  `,
+  choices: ['Next'],
+  post_trial_gap: 500,
+  clear_display: true
+};
+timeline.push(directions);
+
+var instructions_silence = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function () {
+    return `
+      <div id="dynamic-image-container" style="display: flex; justify-content: center; gap: 80px;">
+        <img id="image1" src="" style="width: 0;" />
+        <img id="image2" src="" style="width: 0;" />
+      </div>
+    `;
+  },
+  choices: [],
+  trial_duration: 30000,
+  on_load: function () {
+    // Start audio
+    let audio = new Audio(media.target);
+    audio.play();
+
+    const image1 = document.getElementById('image1');
+    const image2 = document.getElementById('image2');
+
+    const trialStart = performance.now();
+
+    const updateImage = () => {
+      const elapsed = performance.now() - trialStart;
+
+      if (elapsed >= 5000 && elapsed < 13000) {
+        image1.src = media.collin;
+        image2.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+      } else if (elapsed >= 14000 && elapsed < 18000) {
+        image1.src = media.room;
+        image2.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+      } else if (elapsed >= 19000 && elapsed < 23000) {
+        image1.src = media.collin;
+        image2.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+      } else if (elapsed >= 25000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image1.style.width = "20vw";
+        image2.style.width = "20vw";
+      } else {
+        image1.src = '';
+        image2.src = '';
+        image1.style.width = "0";
+        image2.style.width = "0";
+      }
+    };
+
+    const interval = setInterval(updateImage, 100);
+    setTimeout(() => clearInterval(interval), 40000);
+  },
+  response_ends_trial: false,
+  post_trial_gap: 500,
+  clear_display: true
+};
+
+timeline.push(instructions_silence);
+
 /* create the randomized timeline */
 var main_timeline = {
   timeline: [
     {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: function() {
+        const imageUrl = jsPsych.timelineVariable('stimulus_image');
+        console.log('Attempting to display image:', imageUrl);
         return `
           <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-            <img src="${jsPsych.timelineVariable('stimulus_image')}" style="width: 40vw; max-width: 500px; height: auto; margin-bottom: 20px;">
+            <img src="${imageUrl}" style="width: 40vw; max-width: 500px; height: auto; margin-bottom: 20px;" 
+                 onerror="console.error('Error loading image:', this.src)"
+                 onload="console.log('Image loaded successfully:', this.src)">
             <div style="display: flex; justify-content: center; gap: 200px;">
-              <img src="${media.box}" style="width: 12vw; max-width: 200px; height: auto;">
-              <img src="${media.box}" style="width: 12vw; max-width: 200px; height: auto;">
+              <img src="${media.box}" style="width: 12vw; max-width: 200px; height: auto;" 
+                   onerror="console.error('Error loading box image:', this.src)"
+                   onload="console.log('Box image loaded successfully:', this.src)">
+              <img src="${media.box}" style="width: 12vw; max-width: 200px; height: auto;" 
+                   onerror="console.error('Error loading box image:', this.src)"
+                   onload="console.log('Box image loaded successfully:', this.src)">
             </div>
           </div>
         `;
@@ -168,7 +259,10 @@ var main_timeline = {
       trial_duration: 1200,
       response_ends_trial: true,
       post_trial_gap: 500,
-      clear_display: true
+      clear_display: true,
+      on_load: function() {
+        console.log('Trial loaded with image:', jsPsych.timelineVariable('stimulus_image'));
+      }
     },
     {
       type: jsPsychHtmlButtonResponse,
