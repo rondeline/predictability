@@ -11,8 +11,23 @@ body {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.25em;
+  position: relative;
 }
 
+/* Add styles for trial transitions */
+.jspsych-display-element {
+  position: relative;
+  overflow: hidden;
+}
+
+.jspsych-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Ensure buttons don't interfere with transitions */
 button, input[type="button"] {
   font-size: 1.2em;
   padding: 0.5em 1.5em;
@@ -23,6 +38,8 @@ button, input[type="button"] {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
 button:hover, input[type="button"]:hover {
@@ -34,21 +51,18 @@ img {
   height: auto;
   margin: 1em 0;
   border-radius: 10px;
+  position: relative;
 }
 
 .jspsych-btn {
   display: inline-block;
   margin: 0.5em;
+  position: relative;
 }
 
 #jspsych-target {
   padding: 2em;
   max-width: 800px;
   margin: 0 auto;
-}
-
-.jspsych-content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
