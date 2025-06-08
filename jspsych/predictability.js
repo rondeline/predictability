@@ -46,6 +46,10 @@ const media = {
   whale: baseDir + "jspsych/img/whale.png",
   collin: baseDir + "jspsych/img/collin.png",
   room: baseDir + "jspsych/img/room.png",
+  animals: baseDir + "jspsych/img/animals.png",
+  vehicles: baseDir + "jspsych/img/vehicles.png",
+  green: baseDir + "jspsych/img/green.png",
+  cupcake: baseDir + "jspsych/img/cupcake.png",
 
   /*audio*/
   uphorn: baseDir + "jspsych/mp3/up_horn_5snr.mp3",
@@ -64,7 +68,8 @@ var img_preload = {
     media.convertible, media.dog, media.fiat, media.fish, media.frog, media.horse,
     media.iguana, media.ladybug, media.lion, media.minivan, media.octopus,
     media.pickup, media.pig, media.seahorse, media.suv, media.tractor_truck,
-    media.tractor, media.truck, media.turtle, media.whale, media.collin, media.room
+    media.tractor, media.truck, media.turtle, media.whale, media.collin, media.room,
+    media.cupcake
   ],
   on_error: function(file) {
     console.error('Error loading image:', file);
@@ -124,13 +129,13 @@ var trial_variables = [
   { stimulus_image: media.bird },
   { stimulus_image: media.bus },
   { stimulus_image: media.butterfly },
-  { stimulus_image: media.car },
+  { image: media.car },
   { stimulus_image: media.cat },
   { stimulus_image: media.convertible },
-  { stimulus_image: media.dog },
+  { image: media.dog },
   { stimulus_image: media.fiat },
   { stimulus_image: media.fish },
-  { stimulus_image: media.frog },
+  { image: media.frog },
   { stimulus_image: media.horse },
   { stimulus_image: media.iguana },
   { stimulus_image: media.ladybug },
@@ -146,39 +151,81 @@ var trial_variables = [
   { stimulus_image: media.truck },
   { stimulus_image: media.turtle },
   { stimulus_image: media.whale },
-  { stimulus_image: media.collin },
-  { stimulus_image: media.room },
+  { image: media.collin },
+  { image: media.room },
   { stimulus_audio: media.uphorn },
   { stimulus_audio: media.phorn },
-  { stimulus_audio: media.target }
+  { stimulus_audio: media.target },
+  { image: media.animals },
+  { image: media.vehicles },
+  { image: media.green }
 ];
 
 /* directions */
 var directions = {
-  type: jsPsychHtmlButtonResponse,
-  stimulus: `
-    <h2>Directions</h2>
-    <p>In this study, you will be shown a picture of a person and a sound. Your task is to predict whether the person will move or not. If you think the person will move, press "a". If you think the person will not move, press "l".</p>
-    <p>Press "next" to continue.</p>
-  `,
-  choices: ['Next'],
-  post_trial_gap: 500,
-  clear_display: true
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div style="text-align: center; font-size: 24px; max-width: 60%; margin-bottom: 30px;">
+          <h2>Directions</h2>
+          <p>In this study, you will use the 'A' and 'L' keys to sort images into two boxes. Press 'A' if you 
+          think the image should go in the box on the left, and press 'L' if you think the image should go
+          in the right box.</p>
+          <p>Press the spacebar to continue.</p>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 100px;">
+          <img src="${media.box}" style="width: 15vw;">
+          <img src="${media.box}" style="width: 15vw;">
+        </div>
+      </div>
+    `;
+  },
+  choices: [' '],
+  post_trial_gap: 500
 };
 timeline.push(directions);
 
+var cupcake_example = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <img src="${media.cupcake}" style="width: 20vw; margin-bottom: 30px;">
+        <div style="display: flex; justify-content: center; gap: 100px;">
+          <img src="${media.box}" style="width: 15vw;">
+          <img src="${media.box}" style="width: 15vw;">
+        </div>
+      </div>
+    `;
+  },
+  choices: ['a', 'l'],
+  response_ends_trial: true,
+  post_trial_gap: 500,
+  on_finish: function(data) {
+    if (data.key_press !== 65) { // 65 is the keycode for 'a'
+      jsPsych.endCurrentTimeline();
+      jsPsych.addNodeToCurrentTimeline(cupcake_example);
+    }
+  }
+};
+
+/* create the three instruction conditions */
 var instructions_silence = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
     return `
-      <div id="dynamic-image-container" style="display: flex; justify-content: center; gap: 80px;">
-        <img id="image1" src="" style="width: 0;" />
-        <img id="image2" src="" style="width: 0;" />
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; box-sizing: border-box; overflow: hidden;">
+        <img id="image3" src="" style="width: 0; max-width: 60vw; max-height: 25vh; margin-bottom: 3vh;" />
+        <div id="dynamic-image-container" style="display: flex; justify-content: center; align-items: center; gap: 10vw; max-width: 90vw; max-height: 50vh; flex-wrap: nowrap; overflow: hidden; box-sizing: border-box;">
+          <img id="image1" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+          <img id="image2" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+        </div>
       </div>
     `;
   },
   choices: [],
-  trial_duration: 30000,
+  trial_duration: 82000,
   on_load: function () {
     // Start audio
     let audio = new Audio(media.target);
@@ -186,49 +233,493 @@ var instructions_silence = {
 
     const image1 = document.getElementById('image1');
     const image2 = document.getElementById('image2');
+    const image3 = document.getElementById('image3');
 
     const trialStart = performance.now();
 
     const updateImage = () => {
       const elapsed = performance.now() - trialStart;
 
-      if (elapsed >= 5000 && elapsed < 13000) {
+      // Reset borders
+      image1.style.border = "none";
+      image2.style.border = "none";
+      image3.style.border = "none";
+
+      if (elapsed >= 3000 && elapsed < 11000) {
         image1.src = media.collin;
         image2.src = '';
+        image3.src = '';
         image1.style.width = "40vw";
         image2.style.width = "0";
-      } else if (elapsed >= 14000 && elapsed < 18000) {
+        image3.style.width = "0";
+      } else if (elapsed >= 12000 && elapsed < 16000) {
         image1.src = media.room;
         image2.src = '';
-        image1.style.width = "40vw";
+        image3.src = '';
+        image1.style.width = "60vw";
         image2.style.width = "0";
-      } else if (elapsed >= 19000 && elapsed < 23000) {
+        image3.style.width = "0";
+      } else if (elapsed >= 17000 && elapsed < 23000) {
         image1.src = media.collin;
         image2.src = '';
+        image3.src = '';
         image1.style.width = "40vw";
         image2.style.width = "0";
-      } else if (elapsed >= 25000) {
+        image3.style.width = "0";
+      } else if (elapsed >= 25000 && elapsed < 28000) {
         image1.src = media.box;
         image2.src = media.box;
-        image1.style.width = "20vw";
-        image2.style.width = "20vw";
+        image3.src = '';
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "0";
+      } else if (elapsed >= 29000 && elapsed < 33000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.animals;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 31000) {
+          image1.style.border = "8px solid blue";
+          image1.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 34000 && elapsed < 37000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.vehicles;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 36000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 38000 && elapsed < 47000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.green;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 44000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 50000 && elapsed < 54000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.dog;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 52000) {
+          image1.style.border = "8px solid blue";
+          image1.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 54000 && elapsed < 58000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.car;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 56000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 59000 && elapsed < 70000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.frog;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 63000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 73000 && elapsed < 78000) {
+        image1.src = media.room;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
       } else {
         image1.src = '';
         image2.src = '';
+        image3.src = '';
         image1.style.width = "0";
         image2.style.width = "0";
+        image3.style.width = "0";
       }
     };
 
     const interval = setInterval(updateImage, 100);
-    setTimeout(() => clearInterval(interval), 40000);
+    setTimeout(() => clearInterval(interval), 82000);
   },
   response_ends_trial: false,
   post_trial_gap: 500,
   clear_display: true
 };
 
-timeline.push(instructions_silence);
+var instructions_uphorn = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function () {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; box-sizing: border-box; overflow: hidden;">
+        <img id="image3" src="" style="width: 0; max-width: 60vw; max-height: 25vh; margin-bottom: 3vh;" />
+        <div id="dynamic-image-container" style="display: flex; justify-content: center; align-items: center; gap: 10vw; max-width: 90vw; max-height: 50vh; flex-wrap: nowrap; overflow: hidden; box-sizing: border-box;">
+          <img id="image1" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+          <img id="image2" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+        </div>
+      </div>
+    `;
+  },
+  choices: [],
+  trial_duration: 82000,
+  on_load: function () {
+    // Start audio
+    let audio = new Audio(media.uphorn);
+    audio.play();
+
+    const image1 = document.getElementById('image1');
+    const image2 = document.getElementById('image2');
+    const image3 = document.getElementById('image3');
+
+    const trialStart = performance.now();
+
+    const updateImage = () => {
+      const elapsed = performance.now() - trialStart;
+
+      // Reset borders
+      image1.style.border = "none";
+      image2.style.border = "none";
+      image3.style.border = "none";
+
+      if (elapsed >= 3000 && elapsed < 11000) {
+        image1.src = media.collin;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else if (elapsed >= 12000 && elapsed < 16000) {
+        image1.src = media.room;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "60vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else if (elapsed >= 17000 && elapsed < 23000) {
+        image1.src = media.collin;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else if (elapsed >= 25000 && elapsed < 28000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = '';
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "0";
+      } else if (elapsed >= 29000 && elapsed < 33000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.animals;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 31000) {
+          image1.style.border = "8px solid blue";
+          image1.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 34000 && elapsed < 37000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.vehicles;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 36000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 38000 && elapsed < 47000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.green;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 44000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 50000 && elapsed < 54000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.dog;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 52000) {
+          image1.style.border = "8px solid blue";
+          image1.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 54000 && elapsed < 58000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.car;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 56000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 59000 && elapsed < 70000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.frog;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 63000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 73000 && elapsed < 78000) {
+        image1.src = media.room;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else {
+        image1.src = '';
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "0";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      }
+    };
+
+    const interval = setInterval(updateImage, 100);
+    setTimeout(() => clearInterval(interval), 82000);
+  },
+  response_ends_trial: false,
+  post_trial_gap: 500,
+  clear_display: true
+};
+
+var instructions_phorn = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function () {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; box-sizing: border-box; overflow: hidden;">
+        <img id="image3" src="" style="width: 0; max-width: 60vw; max-height: 25vh; margin-bottom: 3vh;" />
+        <div id="dynamic-image-container" style="display: flex; justify-content: center; align-items: center; gap: 10vw; max-width: 90vw; max-height: 50vh; flex-wrap: nowrap; overflow: hidden; box-sizing: border-box;">
+          <img id="image1" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+          <img id="image2" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+        </div>
+      </div>
+    `;
+  },
+  choices: [],
+  trial_duration: 82000,
+  on_load: function () {
+    // Start audio
+    let audio = new Audio(media.phorn);
+    audio.play();
+
+    const image1 = document.getElementById('image1');
+    const image2 = document.getElementById('image2');
+    const image3 = document.getElementById('image3');
+
+    const trialStart = performance.now();
+
+    const updateImage = () => {
+      const elapsed = performance.now() - trialStart;
+
+      // Reset borders
+      image1.style.border = "none";
+      image2.style.border = "none";
+      image3.style.border = "none";
+
+      if (elapsed >= 3000 && elapsed < 11000) {
+        image1.src = media.collin;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else if (elapsed >= 12000 && elapsed < 16000) {
+        image1.src = media.room;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "60vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else if (elapsed >= 17000 && elapsed < 23000) {
+        image1.src = media.collin;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else if (elapsed >= 25000 && elapsed < 28000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = '';
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "0";
+      } else if (elapsed >= 29000 && elapsed < 33000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.animals;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 31000) {
+          image1.style.border = "8px solid blue";
+          image1.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 34000 && elapsed < 37000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.vehicles;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 36000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 38000 && elapsed < 47000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.green;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 44000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 50000 && elapsed < 54000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.dog;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 52000) {
+          image1.style.border = "8px solid blue";
+          image1.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 54000 && elapsed < 58000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.car;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 56000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 59000 && elapsed < 70000) {
+        image1.src = media.box;
+        image2.src = media.box;
+        image3.src = media.frog;
+        image1.style.width = "15vw";
+        image2.style.width = "15vw";
+        image3.style.width = "20vw";
+        if (elapsed >= 63000) {
+          image2.style.border = "8px solid blue";
+          image2.style.borderRadius = "10px";
+        }
+      } else if (elapsed >= 73000 && elapsed < 78000) {
+        image1.src = media.room;
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "40vw";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      } else {
+        image1.src = '';
+        image2.src = '';
+        image3.src = '';
+        image1.style.width = "0";
+        image2.style.width = "0";
+        image3.style.width = "0";
+      }
+    };
+
+    const interval = setInterval(updateImage, 100);
+    setTimeout(() => clearInterval(interval), 82000);
+  },
+  response_ends_trial: false,
+  post_trial_gap: 500,
+  clear_display: true
+};
+
+/* create a timeline variable for random instruction selection */
+var instruction_timeline = {
+  timeline: [
+    {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: function() {
+        var condition = jsPsych.timelineVariable('condition');
+        console.log('Playing ' + condition + ' condition');
+        if (condition === 'silence') {
+          return instructions_silence.stimulus();
+        } else if (condition === 'uphorn') {
+          return instructions_uphorn.stimulus();
+        } else {
+          return instructions_phorn.stimulus();
+        }
+      },
+      choices: [],
+      trial_duration: 82000,
+      on_load: function() {
+        var condition = jsPsych.timelineVariable('condition');
+        if (condition === 'silence') {
+          let audio = new Audio(media.target);
+          audio.play();
+          instructions_silence.on_load();
+        } else if (condition === 'uphorn') {
+          let audio = new Audio(media.uphorn);
+          audio.play();
+          instructions_uphorn.on_load();
+        } else {
+          let audio = new Audio(media.phorn);
+          audio.play();
+          instructions_phorn.on_load();
+        }
+      },
+      response_ends_trial: false,
+      post_trial_gap: 500,
+      clear_display: true
+    }
+  ],
+  timeline_variables: [
+    { condition: 'silence' },
+    { condition: 'uphorn' },
+    { condition: 'phorn' }
+  ],
+  randomize_order: true,
+  sample: {
+    type: 'without-replacement',
+    size: 1
+  }
+};
 
 /* create the randomized timeline */
 var main_timeline = {
@@ -275,7 +766,7 @@ var main_timeline = {
         }
       },
       choices: [],
-      trial_duration: 1000,
+      trial_duration: 1200,
       post_trial_gap: 500,
       clear_display: true
     }
@@ -283,6 +774,9 @@ var main_timeline = {
   timeline_variables: trial_variables,
   randomize_order: true
 };
+
+/* add the instruction timeline to the main timeline */
+timeline.push(instruction_timeline);
 
 /* add the randomized timeline to the main timeline */
 timeline.push(main_timeline);

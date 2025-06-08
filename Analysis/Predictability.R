@@ -94,9 +94,28 @@ full_analysis <- join_data |>
                             stimulus_item == "turtle" ~ "box_car",
                             stimulus_item == "bird" ~ "box_car"),
          correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0))
+                             TRUE ~ 0),
+         predictability = case_when(
+           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
+           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
+           TRUE ~ "Silence")) |> 
+  group_by(predictability) |> 
+  summarise(mean_correct = mean(correct),
+            ci_l = binom.bayes(x = sum(correct), n = n())$lower,
+            ci_u = binom.bayes(x = sum(correct), n = n())$upper,
+            n = n())
 
-View(analysis)
+View(full_analysis)
+
+ggplot(full_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
+  ylim(0,1) +
+  xlab("Condition") +
+  ylab("Accuracy") +
+  geom_hline(yintercept = 0.5, linetype = "dashed") +
+  coord_flip() +
+  theme_few() +
+  theme(legend.position = "none")
 
 target_analysis <- join_data |> 
   filter(stimulus_item %in% c("bird", "turtle")) |> 
@@ -187,7 +206,7 @@ View(age_analysis)
   
 # Emails to pay participants 
 emails <- survey |> 
-  filter(item == "email")
+  select(email)
 
 View(emails)
   
