@@ -50,6 +50,9 @@ const media = {
   vehicles: baseDir + "jspsych/img/vehicles.png",
   green: baseDir + "jspsych/img/green.png",
   cupcake: baseDir + "jspsych/img/cupcake.png",
+  cookie: baseDir + "jspsych/img/cookie.png",
+  banana: baseDir + "jspsych/img/banana.png",
+  grapes: baseDir + "jspsych/img/grapes.png",
 
   /*audio*/
   uphorn: baseDir + "jspsych/mp3/up_horn_5snr.mp3",
@@ -69,7 +72,7 @@ var img_preload = {
     media.iguana, media.ladybug, media.lion, media.minivan, media.octopus,
     media.pickup, media.pig, media.seahorse, media.suv, media.tractor_truck,
     media.tractor, media.truck, media.turtle, media.whale, media.collin, media.room,
-    media.cupcake
+    media.cupcake, media.cookie, media.banana, media.grapes
   ],
   on_error: function(file) {
     console.error('Error loading image:', file);
@@ -129,13 +132,10 @@ var trial_variables = [
   { stimulus_image: media.bird },
   { stimulus_image: media.bus },
   { stimulus_image: media.butterfly },
-  { image: media.car },
   { stimulus_image: media.cat },
   { stimulus_image: media.convertible },
-  { image: media.dog },
   { stimulus_image: media.fiat },
   { stimulus_image: media.fish },
-  { image: media.frog },
   { stimulus_image: media.horse },
   { stimulus_image: media.iguana },
   { stimulus_image: media.ladybug },
@@ -150,19 +150,11 @@ var trial_variables = [
   { stimulus_image: media.tractor },
   { stimulus_image: media.truck },
   { stimulus_image: media.turtle },
-  { stimulus_image: media.whale },
-  { image: media.collin },
-  { image: media.room },
-  { stimulus_audio: media.uphorn },
-  { stimulus_audio: media.phorn },
-  { stimulus_audio: media.target },
-  { image: media.animals },
-  { image: media.vehicles },
-  { image: media.green }
+  { stimulus_image: media.whale }
 ];
 
 /* directions */
-var directions = {
+var directions1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
     return `
@@ -172,7 +164,7 @@ var directions = {
           <p>In this study, you will use the 'A' and 'L' keys to sort images into two boxes. Press 'A' if you 
           think the image should go in the box on the left, and press 'L' if you think the image should go
           in the right box.</p>
-          <p>Press the spacebar to continue.</p>
+          <p>Press the spacebar to try a few examples.</p>
         </div>
         <div style="display: flex; justify-content: center; gap: 100px;">
           <img src="${media.box}" style="width: 15vw;">
@@ -184,13 +176,14 @@ var directions = {
   choices: [' '],
   post_trial_gap: 500
 };
-timeline.push(directions);
+timeline.push(directions1);
 
 var cupcake_example = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
     return `
       <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <p>Press 'A' to move the cupcake into the left box.</p>
         <img src="${media.cupcake}" style="width: 20vw; margin-bottom: 30px;">
         <div style="display: flex; justify-content: center; gap: 100px;">
           <img src="${media.box}" style="width: 15vw;">
@@ -199,16 +192,230 @@ var cupcake_example = {
       </div>
     `;
   },
-  choices: ['a', 'l'],
+  choices: ['a'],
   response_ends_trial: true,
-  post_trial_gap: 500,
+  trial_duration: null
+};
+timeline.push(cupcake_example);
+
+var banana_example = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <p>Press 'L' to move the banana into the right box.</p>
+        <img src="${media.banana}" style="width: 20vw; margin-bottom: 30px;">
+        <div style="display: flex; justify-content: center; gap: 100px;">
+          <img src="${media.box}" style="width: 15vw;">
+          <img src="${media.box}" style="width: 15vw;">
+        </div>
+      </div>
+    `;
+  },
+  choices: ['l'],
+  response_ends_trial: true,
+  trial_duration: null
+};
+timeline.push(banana_example);
+
+var directions2 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <p>Great! You will only have 1200ms to respond to each image. Let's practice responding quickly.
+        On the next page, press 'A' to move the cookie into the box on the left.</p>
+        <p>Press the spacebar to continue.</p>
+      </div>`;
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+timeline.push(directions2);
+
+var cookie_feedback = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="text-align: center; font-size: 24px;">
+        <p>Great work! You responded within 1200ms.</p>
+        <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+        <p>Press the spacebar to continue.</p>
+      </div>
+    `;
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+
+var cookie_slow_feedback = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="text-align: center; font-size: 24px;">
+        <p>Too slow! Try to respond within 1200ms next time.</p>
+        <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+        <p>Press the spacebar to continue</p>
+      </div>
+    `;
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+
+let cookie_response_rt = null;
+
+var cookie_example = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <p>Press 'A' to move the cookie into the left box.</p>
+        <img src="${media.cookie}" style="width: 20vw; margin-bottom: 30px;">
+        <div style="display: flex; justify-content: center; gap: 100px;">
+          <img src="${media.box}" style="width: 15vw;">
+          <img src="${media.box}" style="width: 15vw;">
+        </div>
+      </div>
+    `;
+  },
+  choices: ['a'],
+  response_ends_trial: true,
+  trial_duration: 1200,
   on_finish: function(data) {
-    if (data.key_press !== 65) { // 65 is the keycode for 'a'
-      jsPsych.endCurrentTimeline();
-      jsPsych.addNodeToCurrentTimeline(cupcake_example);
-    }
+    cookie_response_rt = data.rt;
   }
 };
+
+var cookie_feedback = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    if (cookie_response_rt === null || cookie_response_rt > 1200) {
+      return `
+        <div style="text-align: center; font-size: 24px;">
+          <p>Too slow! Try to respond within 1200ms next time.</p>
+          <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+          <p>Press the spacebar to continue</p>
+        </div>
+      `;
+    } else {
+      return `
+        <div style="text-align: center; font-size: 24px;">
+          <p>Great work! You responded within 1200ms.</p>
+          <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+          <p>Press the spacebar to continue.</p>
+        </div>
+      `;
+    }
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+
+timeline.push(cookie_example, cookie_feedback);
+
+let grapes_response_rt = null;
+
+var grapes_example = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <p>Press 'L' to move the grapes into the right box.</p>
+        <img src="${media.grapes}" style="width: 20vw; margin-bottom: 30px;">
+        <div style="display: flex; justify-content: center; gap: 100px;">
+          <img src="${media.box}" style="width: 15vw;">
+          <img src="${media.box}" style="width: 15vw;">
+        </div>
+      </div>
+    `;
+  },
+  choices: ['l'],
+  response_ends_trial: true,
+  trial_duration: 1200,
+  on_finish: function(data) {
+    grapes_response_rt = data.rt;
+  }
+};
+
+var grapes_feedback = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    if (grapes_response_rt === null || grapes_response_rt > 1200) {
+      return `
+        <div style="text-align: center; font-size: 24px;">
+          <p>Too slow! Try to respond within 1200ms next time.</p>
+          <p>Press the spacebar to continue</p>
+        </div>
+      `;
+    } else {
+      return `
+        <div style="text-align: center; font-size: 24px;">
+          <p>Great work! You responded within 1200ms.</p>
+          <p>Press the spacebar to continue.</p>
+        </div>
+      `;
+    }
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+
+timeline.push(grapes_example, grapes_feedback);
+
+var directions3 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="text-align: center; font-size: 24px;">
+        <p>You will now learn how to play the game. Accuracy on this game is very important, so please pay close attention.
+        The highest scoring participants will earn a bonus payment of up to $5.</p>
+        <p>Press the spacebar to continue.</p>
+      </div>
+    `;
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+timeline.push(directions3);
+
+var attention_check = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: function() {
+    return `
+      <div style="text-align: center; font-size: 24px;">
+        <p>Here are a few random words. Please select the word ruler so we know you are still with us.</p>
+      </div>
+    `;
+  },
+  choices: ['apple', 'ruler', 'jacket', 'hammer', 'water', 'yogurt'],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+timeline.push(attention_check);
+
+var ready = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="text-align: center; font-size: 24px;">
+        <p>Great! You are ready to play the game. Remember that the highest scoring participants will earn a bonus payment of up to $5.</p>
+        <p>Press the spacebar to start the game.</p>
+      </div>
+    `;
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  post_trial_gap: 500
+};
+timeline.push(ready);
+
 
 /* create the three instruction conditions */
 var instructions_silence = {
@@ -746,29 +953,43 @@ var main_timeline = {
         `;
       },
       choices: ['a', 'l'],
-      stimulus_duration: 1200,
       trial_duration: 1200,
       response_ends_trial: true,
       post_trial_gap: 500,
       clear_display: true,
       on_load: function() {
         console.log('Trial loaded with image:', jsPsych.timelineVariable('stimulus_image'));
+      },
+      on_finish: function(data) {
+        // Store the response time
+        jsPsych.data.addProperties({
+          response_time: data.rt
+        });
       }
     },
     {
-      type: jsPsychHtmlButtonResponse,
+      type: jsPsychHtmlKeyboardResponse,
       stimulus: function() {
         var last_trial = jsPsych.data.get().last(1).values()[0];
         if (last_trial.rt === null) {
-          return "Too slow! Try to be faster next time.";
+          return `
+            <div style="text-align: center; font-size: 24px;">
+              <p>Too slow! Try to respond within 1200ms next time.</p>
+              <p>Press the spacebar to continue.</p>
+            </div>
+          `;
         } else {
-          return "";
+          return null; // Skip feedback for successful responses
         }
       },
-      choices: [],
-      trial_duration: 1200,
+      choices: [' '],
+      response_ends_trial: true,
       post_trial_gap: 500,
-      clear_display: true
+      clear_display: true,
+      conditional_function: function() {
+        var last_trial = jsPsych.data.get().last(1).values()[0];
+        return last_trial.rt === null; // Only show feedback for slow responses
+      }
     }
   ],
   timeline_variables: trial_variables,
@@ -780,6 +1001,67 @@ timeline.push(instruction_timeline);
 
 /* add the randomized timeline to the main timeline */
 timeline.push(main_timeline);
+
+var survey = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    return `
+      <div style="text-align: left; font-size: 24px;">
+        <p>Thank you for your participation! Before we end, please tell us more about yourself.</p>
+        
+        <div style="margin: 20px 0;">
+          <label for="education">What is your highest level of education?</label><br>
+          <select id="education" style="font-size: 20px; margin: 10px 0;">
+            <option value="">Select an option</option>
+            <option value="Less than High School">Less than High School</option>
+            <option value="High School">High School</option>
+            <option value="Some College">Some College</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="Doctoral or Professional Degree">Doctoral or Professional Degree</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <label for="english">How often do you speak English during a normal day?</label><br>
+          <select id="english" style="font-size: 20px; margin: 10px 0;">
+            <option value="">Select an option</option>
+            <option value="Never">Never</option>
+            <option value="A little of the time">A little of the time</option>
+            <option value="Some of the time">Some of the time</option>
+            <option value="Most of the time">Most of the time</option>
+            <option value="All of the time">All of the time</option>
+          </select>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <label for="purpose">What do you think this study was about?</label><br>
+          <textarea id="purpose" style="font-size: 20px; margin: 10px 0; width: 80%; height: 100px;"></textarea>
+        </div>
+
+        <p>Press the spacebar to submit your responses.</p>
+      </div>
+    `;
+  },
+  choices: [' '],
+  response_ends_trial: true,
+  on_finish: function(data) {
+    // Get values from the form
+    const education = document.getElementById('education').value;
+    const english = document.getElementById('english').value;
+    const purpose = document.getElementById('purpose').value;
+
+    // Store the responses
+    jsPsych.data.addProperties({
+      education: education,
+      english_exposure: english,
+      study_purpose: purpose
+    });
+  }
+};
+
+timeline.push(survey);
 
 /* run the experiment */
 jsPsych.run(timeline);

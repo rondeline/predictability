@@ -107,13 +107,13 @@ full_analysis <- join_data |>
 
 View(full_analysis)
 
-ggplot(full_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+ggplot(full_analysis, aes(x = predictability, y = mean_correct, fill = predictability)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
   ylim(0,1) +
   xlab("Condition") +
   ylab("Accuracy") +
   geom_hline(yintercept = 0.5, linetype = "dashed") +
-  coord_flip() +
+  #coord_flip() +
   theme_few() +
   theme(legend.position = "none")
 
