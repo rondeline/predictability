@@ -1,33 +1,38 @@
+/* =========================
+   Base document sizing
+   ========================= */
+html, body { height: 100%; margin: 0; }
+
 body {
   font-family: "Arial", sans-serif;
   text-align: center;
   background-color: #fdfdfd;
-  margin: 0;
-  padding: 2em 2em 2em 3em;
+  padding: 0;
   color: #333;
 }
 
-.jspsych-content {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.25em;
-  position: relative;
-}
-
-/* Add styles for trial transitions */
-.jspsych-display-element {
-  position: relative;
-  overflow: hidden;
-}
-
+/* Let jsPsych fill the viewport */
 .jspsych-content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  margin: 0 auto !important;
+  height: 100vh;
 }
 
-/* Ensure buttons don't interfere with transitions */
+.jspsych-content {
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.25em;
+}
+
+/* Avoid accidental scrolling between trials */
+.jspsych-display-element { position: relative; overflow: hidden; }
+
+/* =========================
+   Buttons (generic)
+   ========================= */
 button, input[type="button"] {
   font-size: 1.2em;
   padding: 0.5em 1.5em;
@@ -41,28 +46,110 @@ button, input[type="button"] {
   position: relative;
   z-index: 1;
 }
+button:hover, input[type="button"]:hover { background-color: #005fa3; }
 
-button:hover, input[type="button"]:hover {
-  background-color: #005fa3;
-}
-
+/* =========================
+   Global images — neutral
+   ========================= */
 img {
   max-width: 100%;
   height: auto;
-  margin: 1em 0;
+  margin: 0;                  /* avoids extra vertical space */
   border-radius: 10px;
-  position: relative;
 }
 
-.jspsych-btn {
-  display: inline-block;
-  margin: 0.5em;
-  position: relative;
+#jspsych-target { padding: 0; max-width: none; margin: 0 auto; }
+
+/* =========================
+   Fullscreen centering wrapper
+   ========================= */
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#jspsych-target {
-  padding: 2em;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
+/* =========================
+   Instruction trials
+   ========================= */
+.triple {
+  display: grid;
+  grid-template-rows: 1fr 1.2fr 1fr;
+  row-gap: 2vh;
+  justify-items: center;
+  width: min(92vw, 1000px);
 }
+.triple img {
+  height: 24vh;
+  width: auto;
+  max-width: 92vw;
+  box-sizing: border-box; /* borders don’t increase total height */
+}
+.triple img:nth-child(2) { height: 28vh; }
+
+/* States you toggle from JS */
+.hidden { display: none; }
+.hero { grid-row: 1 / -1; }
+.triple img.hero { height: 60vh !important; max-height: 60vh; }
+.highlight { outline: 8px solid blue; border-radius: 10px; }
+
+/* =========================
+   Choice trials
+   ========================= */
+.choice {
+  display: flex;
+  flex-direction: column;   /* default column; overridden by .choice-row */
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+.choice-row { flex-direction: row; gap: 4vw; }
+
+.box-img {
+  height: 15vh;
+  width: auto;
+  max-width: 200px;
+  margin: 0;                /* no vertical padding in row layout */
+}
+
+/* Stimulus in custom layouts */
+.triple .stimulus-img,
+.choice .stimulus-img {
+  height: 28vh;
+  width: auto;
+  max-width: 60vw;
+  margin: 0;
+}
+
+/* =========================
+   jsPsych HTML Button Response: spacing
+   (v7 renders an element with this *ID*; we also include the class for robustness)
+   ========================= */
+#jspsych-html-button-response-btngroup,
+.jspsych-html-button-response-btngroup {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;                /* space between buttons */
+}
+
+/* remove any margins jsPsych or earlier rules add */
+#jspsych-html-button-response-btngroup .jspsych-html-button-response-button,
+#jspsych-html-button-response-btngroup .jspsych-btn,
+.jspsych-html-button-response-btngroup .jspsych-html-button-response-button,
+.jspsych-html-button-response-btngroup .jspsych-btn {
+  margin: 0 !important;
+}
+
+/* fallback if 'gap' isn’t supported */
+#jspsych-html-button-response-btngroup
+  .jspsych-html-button-response-button + .jspsych-html-button-response-button,
+.jspsych-html-button-response-btngroup
+  .jspsych-html-button-response-button + .jspsych-html-button-response-button {
+  margin-left: 12px !important;
+}
+
+/* a little space between the prompt and the buttons */
+#jspsych-html-button-response-stimulus { margin-bottom: 16px; }

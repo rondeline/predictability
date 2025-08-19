@@ -1,11 +1,27 @@
+// send CSV to the server 
+function saveData(csvString) {
+  return fetch('/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ filedata: csvString }) // same shape as the PHP example
+  });
+}
+
 /* initialize jsPsych */
 var jsPsych = initJsPsych({
-  on_finish: function () {
-    jsPsych.data.displayData();
-  },
   display_element: 'jspsych-target',
-  on_load: function() {
+  on_load: function () {
     document.body.style.backgroundColor = '#fdfdfd';
+  },
+  on_finish: function () {
+    // Just show the data table in the browser (no saving)
+    //jsPsych.data.displayData();
+    saveData(jsPsych.data.get().csv())
+      .then(() => console.log('Saved CSV'))
+      .catch(err => console.error('Save failed:', err));
+
+    // optional, just for viewing in the browser
+    jsPsych.data.displayData();
   }
 });
 
@@ -94,13 +110,22 @@ var aud_preload = {
 };
 timeline.push(aud_preload);
 
+/* prolific id */
+var pid = {
+  type: jsPsychSurveyText,
+  questions: [
+    { prompt: 'Please enter your Prolific ID:', name: 'prolific_id', required: true, rows: 1, columns: 12 }
+  ],
+  button_label: 'Next'
+};
+timeline.push(pid);
+
 /* welcome trial */
 var welcome = {
-  type: jsPsychHtmlButtonResponse,
-  stimulus: 'Welcome! Press "next" to continue.',
-  choices: ['Next'],
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: 'Welcome! Press the spacebar to continue.',
+  choices: [' '],
   post_trial_gap: 500,
-  clear_display: true
 };
 timeline.push(welcome);
 
@@ -162,11 +187,11 @@ var directions1 = {
         <div style="text-align: center; font-size: 24px; max-width: 60%; margin-bottom: 30px;">
           <h2>Directions</h2>
           <p>In this study, you will use the 'A' and 'L' keys to sort images into two boxes. Press 'A' if you 
-          think the image should go in the box on the left, and press 'L' if you think the image should go
-          in the right box.</p>
+          think the image should go in the box on the top, and press 'L' if you think the image should go
+          in the box on the bottom.</p>
           <p>Press the spacebar to try a few examples.</p>
         </div>
-        <div style="display: flex; justify-content: center; gap: 100px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 5px;">
           <img src="${media.box}" style="width: 15vw;">
           <img src="${media.box}" style="width: 15vw;">
         </div>
@@ -182,12 +207,12 @@ var cupcake_example = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <p>Press 'A' to move the cupcake into the left box.</p>
-        <img src="${media.cupcake}" style="width: 20vw; margin-bottom: 30px;">
-        <div style="display: flex; justify-content: center; gap: 100px;">
-          <img src="${media.box}" style="width: 15vw;">
-          <img src="${media.box}" style="width: 15vw;">
+      <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+        <p>Press 'A' to move the cupcake into the top box.</p>
+        <div style="display:flex; flex-direction: column; align-items:center; gap:10px; margin-top:5px;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
+          <img src="${media.cupcake}" style="width:12vw; max-width:125px; height:auto;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
         </div>
       </div>
     `;
@@ -202,12 +227,12 @@ var banana_example = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <p>Press 'L' to move the banana into the right box.</p>
-        <img src="${media.banana}" style="width: 20vw; margin-bottom: 30px;">
-        <div style="display: flex; justify-content: center; gap: 100px;">
-          <img src="${media.box}" style="width: 15vw;">
-          <img src="${media.box}" style="width: 15vw;">
+      <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+        <p>Press 'L' to move the banana into the bottom box.</p>
+        <div style="display:flex; flex-direction: column; align-items:center; gap:10px; margin-top:5px;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
+          <img src="${media.banana}" style="width:12vw; max-width:125px; height:auto;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
         </div>
       </div>
     `;
@@ -223,8 +248,8 @@ var directions2 = {
   stimulus: function() {
     return `
       <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <p>Great! You will only have 1200ms to respond to each image. Let's practice responding quickly.
-        On the next page, press 'A' to move the cookie into the box on the left.</p>
+        <p>Great! You will only have 1500ms to respond to each image. Let's practice responding quickly.
+        On the next page, press 'A' to move the cookie into the top box.</p>
         <p>Press the spacebar to continue.</p>
       </div>`;
   },
@@ -239,8 +264,8 @@ var cookie_feedback = {
   stimulus: function() {
     return `
       <div style="text-align: center; font-size: 24px;">
-        <p>Great work! You responded within 1200ms.</p>
-        <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+        <p>Great work! You responded within 1500ms.</p>
+        <p>Press 'L' on the next page to move the grapes into the bottom box.</p>
         <p>Press the spacebar to continue.</p>
       </div>
     `;
@@ -255,8 +280,8 @@ var cookie_slow_feedback = {
   stimulus: function() {
     return `
       <div style="text-align: center; font-size: 24px;">
-        <p>Too slow! Try to respond within 1200ms next time.</p>
-        <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+        <p>Too slow! Try to respond faster next time.</p>
+        <p>Press 'L' on the next page to move the grapes into the bottom box.</p>
         <p>Press the spacebar to continue</p>
       </div>
     `;
@@ -272,19 +297,19 @@ var cookie_example = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <p>Press 'A' to move the cookie into the left box.</p>
-        <img src="${media.cookie}" style="width: 20vw; margin-bottom: 30px;">
-        <div style="display: flex; justify-content: center; gap: 100px;">
-          <img src="${media.box}" style="width: 15vw;">
-          <img src="${media.box}" style="width: 15vw;">
+    <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+        <p>Press 'A' to move the cookie into the top box.</p>
+        <div style="display:flex; flex-direction: column; align-items:center; gap:10px; margin-top:5px;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
+          <img src="${media.cookie}" style="width:12vw; max-width:125px; height:auto;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
         </div>
       </div>
     `;
   },
   choices: ['a'],
   response_ends_trial: true,
-  trial_duration: 1200,
+  trial_duration: 1500,
   on_finish: function(data) {
     cookie_response_rt = data.rt;
   }
@@ -293,19 +318,19 @@ var cookie_example = {
 var cookie_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    if (cookie_response_rt === null || cookie_response_rt > 1200) {
+    if (cookie_response_rt === null || cookie_response_rt > 1500) {
       return `
         <div style="text-align: center; font-size: 24px;">
-          <p>Too slow! Try to respond within 1200ms next time.</p>
-          <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+          <p>Too slow! Try to respond faster next time.</p>
+          <p>Press 'L' on the next page to move the grapes into the bottom box.</p>
           <p>Press the spacebar to continue</p>
         </div>
       `;
     } else {
       return `
         <div style="text-align: center; font-size: 24px;">
-          <p>Great work! You responded within 1200ms.</p>
-          <p>Press 'L' on the next page to move the grapes into the box on the right.</p>
+          <p>Great work! You responded within 1500ms.</p>
+          <p>Press 'L' on the next page to move the grapes into the bottom box.</p>
           <p>Press the spacebar to continue.</p>
         </div>
       `;
@@ -324,19 +349,19 @@ var grapes_example = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <p>Press 'L' to move the grapes into the right box.</p>
-        <img src="${media.grapes}" style="width: 20vw; margin-bottom: 30px;">
-        <div style="display: flex; justify-content: center; gap: 100px;">
-          <img src="${media.box}" style="width: 15vw;">
-          <img src="${media.box}" style="width: 15vw;">
+    <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+        <p>Press 'L' to move the grapes into the bottom box.</p>
+        <div style="display:flex; flex-direction: column; align-items:center; gap:10px; margin-top:5px;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
+          <img src="${media.grapes}" style="width:12vw; max-width:125px; height:auto;">
+          <img src="${media.box}"     style="width:15vw; max-width:150px; height:auto;">
         </div>
       </div>
     `;
   },
   choices: ['l'],
   response_ends_trial: true,
-  trial_duration: 1200,
+  trial_duration: 1500,
   on_finish: function(data) {
     grapes_response_rt = data.rt;
   }
@@ -345,17 +370,17 @@ var grapes_example = {
 var grapes_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    if (grapes_response_rt === null || grapes_response_rt > 1200) {
+    if (grapes_response_rt === null || grapes_response_rt > 1500) {
       return `
         <div style="text-align: center; font-size: 24px;">
-          <p>Too slow! Try to respond within 1200ms next time.</p>
+          <p>Too slow! Try to respond faster next time.</p>
           <p>Press the spacebar to continue</p>
         </div>
       `;
     } else {
       return `
         <div style="text-align: center; font-size: 24px;">
-          <p>Great work! You responded within 1200ms.</p>
+          <p>Great work! You responded within 1500ms.</p>
           <p>Press the spacebar to continue.</p>
         </div>
       `;
@@ -422,11 +447,11 @@ var instructions_silence = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; box-sizing: border-box; overflow: hidden;">
-        <img id="image3" src="" style="width: 0; max-width: 60vw; max-height: 25vh; margin-bottom: 3vh;" />
-        <div id="dynamic-image-container" style="display: flex; justify-content: center; align-items: center; gap: 10vw; max-width: 90vw; max-height: 50vh; flex-wrap: nowrap; overflow: hidden; box-sizing: border-box;">
-          <img id="image1" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
-          <img id="image2" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+      <div class="screen">
+        <div class="triple">
+          <img id="image1" src="">
+          <img id="image3" src="">
+          <img id="image2" src="">
         </div>
       </div>
     `;
@@ -442,6 +467,20 @@ var instructions_silence = {
     const image2 = document.getElementById('image2');
     const image3 = document.getElementById('image3');
 
+    // helpers: toggle classes (instead of fiddling with inline widths/heights)
+    const reset = () => {
+      [image1, image2, image3].forEach(el => {
+        el.classList.remove('hidden','hero','highlight');
+        el.style.outline = 'none';
+      });
+    };
+    const hide  = el => el.classList.add('hidden');
+    const show  = el => el.classList.remove('hidden', 'hero');
+    const hero = el => { 
+      el.classList.remove('hidden');  // ensure visible
+      el.classList.add('hero');       // make it big
+    };
+
     const trialStart = performance.now();
 
     const updateImage = () => {
@@ -453,113 +492,77 @@ var instructions_silence = {
       image3.style.border = "none";
 
       if (elapsed >= 3000 && elapsed < 11000) {
-        image1.src = media.collin;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.collin; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 12000 && elapsed < 16000) {
-        image1.src = media.room;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "60vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.room; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 17000 && elapsed < 23000) {
-        image1.src = media.collin;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.collin; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 25000 && elapsed < 28000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = '';
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "0";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        hide(image3);
       } else if (elapsed >= 29000 && elapsed < 33000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.animals;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.animals; show(image3);
         if (elapsed >= 31000) {
           image1.style.border = "8px solid blue";
           image1.style.borderRadius = "10px";
         }
       } else if (elapsed >= 34000 && elapsed < 37000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.vehicles;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.vehicles; show(image3);
         if (elapsed >= 36000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 38000 && elapsed < 47000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.green;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.green; show(image3);
         if (elapsed >= 44000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 50000 && elapsed < 54000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.dog;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.dog; show(image3);
         if (elapsed >= 52000) {
           image1.style.border = "8px solid blue";
           image1.style.borderRadius = "10px";
         }
       } else if (elapsed >= 54000 && elapsed < 58000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.car;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.car; show(image3);
         if (elapsed >= 56000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 59000 && elapsed < 70000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.frog;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.frog; show(image3);
         if (elapsed >= 63000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 73000 && elapsed < 78000) {
-        image1.src = media.room;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.room; hero(image1);
+        hide(image2);
+        hide(image3);
       } else {
-        image1.src = '';
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "0";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        hide(image1);
+        hide(image2);
+        hide(image3);
       }
     };
 
@@ -575,11 +578,11 @@ var instructions_uphorn = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; box-sizing: border-box; overflow: hidden;">
-        <img id="image3" src="" style="width: 0; max-width: 60vw; max-height: 25vh; margin-bottom: 3vh;" />
-        <div id="dynamic-image-container" style="display: flex; justify-content: center; align-items: center; gap: 10vw; max-width: 90vw; max-height: 50vh; flex-wrap: nowrap; overflow: hidden; box-sizing: border-box;">
-          <img id="image1" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
-          <img id="image2" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+      <div class="screen">
+        <div class="triple">
+          <img id="image1" src="">
+          <img id="image3" src="">
+          <img id="image2" src="">
         </div>
       </div>
     `;
@@ -595,6 +598,20 @@ var instructions_uphorn = {
     const image2 = document.getElementById('image2');
     const image3 = document.getElementById('image3');
 
+    // helpers: toggle classes (instead of fiddling with inline widths/heights)
+    const reset = () => {
+      [image1, image2, image3].forEach(el => {
+        el.classList.remove('hidden','hero','highlight');
+        el.style.outline = 'none';
+      });
+    };
+    const hide  = el => el.classList.add('hidden');
+    const show  = el => el.classList.remove('hidden', 'hero');
+    const hero = el => { 
+      el.classList.remove('hidden');  // ensure visible
+      el.classList.add('hero');       // make it big
+    };
+
     const trialStart = performance.now();
 
     const updateImage = () => {
@@ -606,113 +623,77 @@ var instructions_uphorn = {
       image3.style.border = "none";
 
       if (elapsed >= 3000 && elapsed < 11000) {
-        image1.src = media.collin;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.collin; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 12000 && elapsed < 16000) {
-        image1.src = media.room;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "60vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.room; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 17000 && elapsed < 23000) {
-        image1.src = media.collin;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.collin; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 25000 && elapsed < 28000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = '';
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "0";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        hide(image3);
       } else if (elapsed >= 29000 && elapsed < 33000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.animals;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.animals; show(image3);
         if (elapsed >= 31000) {
           image1.style.border = "8px solid blue";
           image1.style.borderRadius = "10px";
         }
       } else if (elapsed >= 34000 && elapsed < 37000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.vehicles;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.vehicles; show(image3);
         if (elapsed >= 36000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 38000 && elapsed < 47000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.green;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.green; show(image3);
         if (elapsed >= 44000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 50000 && elapsed < 54000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.dog;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.dog; show(image3);
         if (elapsed >= 52000) {
           image1.style.border = "8px solid blue";
           image1.style.borderRadius = "10px";
         }
       } else if (elapsed >= 54000 && elapsed < 58000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.car;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.car; show(image3);
         if (elapsed >= 56000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 59000 && elapsed < 70000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.frog;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.frog; show(image3);
         if (elapsed >= 63000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 73000 && elapsed < 78000) {
-        image1.src = media.room;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.room; hero(image1);
+        hide(image2);
+        hide(image3);
       } else {
-        image1.src = '';
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "0";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        hide(image1);
+        hide(image2);
+        hide(image3);
       }
     };
 
@@ -728,11 +709,11 @@ var instructions_phorn = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function () {
     return `
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; box-sizing: border-box; overflow: hidden;">
-        <img id="image3" src="" style="width: 0; max-width: 60vw; max-height: 25vh; margin-bottom: 3vh;" />
-        <div id="dynamic-image-container" style="display: flex; justify-content: center; align-items: center; gap: 10vw; max-width: 90vw; max-height: 50vh; flex-wrap: nowrap; overflow: hidden; box-sizing: border-box;">
-          <img id="image1" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
-          <img id="image2" src="" style="width: 0; max-width: 30vw; max-height: 100%; height: auto;" />
+      <div class="screen">
+        <div class="triple">
+          <img id="image1" src="">
+          <img id="image3" src="">
+          <img id="image2" src="">
         </div>
       </div>
     `;
@@ -748,6 +729,20 @@ var instructions_phorn = {
     const image2 = document.getElementById('image2');
     const image3 = document.getElementById('image3');
 
+    // helpers: toggle classes (instead of fiddling with inline widths/heights)
+    const reset = () => {
+      [image1, image2, image3].forEach(el => {
+        el.classList.remove('hidden','hero','highlight');
+        el.style.outline = 'none';
+      });
+    };
+    const hide  = el => el.classList.add('hidden');
+    const show  = el => el.classList.remove('hidden', 'hero');
+    const hero = el => { 
+      el.classList.remove('hidden');  // ensure visible
+      el.classList.add('hero');       // make it big
+    };
+
     const trialStart = performance.now();
 
     const updateImage = () => {
@@ -759,113 +754,77 @@ var instructions_phorn = {
       image3.style.border = "none";
 
       if (elapsed >= 3000 && elapsed < 11000) {
-        image1.src = media.collin;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.collin; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 12000 && elapsed < 16000) {
-        image1.src = media.room;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "60vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.room; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 17000 && elapsed < 23000) {
-        image1.src = media.collin;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.collin; hero(image1);
+        hide(image2);
+        hide(image3);
       } else if (elapsed >= 25000 && elapsed < 28000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = '';
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "0";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        hide(image3);
       } else if (elapsed >= 29000 && elapsed < 33000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.animals;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.animals; show(image3);
         if (elapsed >= 31000) {
           image1.style.border = "8px solid blue";
           image1.style.borderRadius = "10px";
         }
       } else if (elapsed >= 34000 && elapsed < 37000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.vehicles;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.vehicles; show(image3);
         if (elapsed >= 36000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 38000 && elapsed < 47000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.green;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.green; show(image3);
         if (elapsed >= 44000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 50000 && elapsed < 54000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.dog;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.dog; show(image3);
         if (elapsed >= 52000) {
           image1.style.border = "8px solid blue";
           image1.style.borderRadius = "10px";
         }
       } else if (elapsed >= 54000 && elapsed < 58000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.car;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.car; show(image3);
         if (elapsed >= 56000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 59000 && elapsed < 70000) {
-        image1.src = media.box;
-        image2.src = media.box;
-        image3.src = media.frog;
-        image1.style.width = "15vw";
-        image2.style.width = "15vw";
-        image3.style.width = "20vw";
+        image1.src = media.box; show(image1);
+        image2.src = media.box; show(image2);
+        image3.src = media.frog; show(image3);
         if (elapsed >= 63000) {
           image2.style.border = "8px solid blue";
           image2.style.borderRadius = "10px";
         }
       } else if (elapsed >= 73000 && elapsed < 78000) {
-        image1.src = media.room;
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "40vw";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        image1.src = media.room; hero(image1);
+        hide(image2);
+        hide(image3);
       } else {
-        image1.src = '';
-        image2.src = '';
-        image3.src = '';
-        image1.style.width = "0";
-        image2.style.width = "0";
-        image3.style.width = "0";
+        hide(image1);
+        hide(image2);
+        hide(image3);
       }
     };
 
@@ -928,141 +887,96 @@ var instruction_timeline = {
   }
 };
 
-/* create the randomized timeline */
-var main_timeline = {
-  timeline: [
-    {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: function() {
-        const imageUrl = jsPsych.timelineVariable('stimulus_image');
-        console.log('Attempting to display image:', imageUrl);
-        return `
-          <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-            <img src="${imageUrl}" style="width: 40vw; max-width: 500px; height: auto; margin-bottom: 20px;" 
-                 onerror="console.error('Error loading image:', this.src)"
-                 onload="console.log('Image loaded successfully:', this.src)">
-            <div style="display: flex; justify-content: center; gap: 200px;">
-              <img src="${media.box}" style="width: 12vw; max-width: 200px; height: auto;" 
-                   onerror="console.error('Error loading box image:', this.src)"
-                   onload="console.log('Box image loaded successfully:', this.src)">
-              <img src="${media.box}" style="width: 12vw; max-width: 200px; height: auto;" 
-                   onerror="console.error('Error loading box image:', this.src)"
-                   onload="console.log('Box image loaded successfully:', this.src)">
-            </div>
-          </div>
-        `;
-      },
-      choices: ['a', 'l'],
-      trial_duration: 1200,
-      response_ends_trial: true,
-      post_trial_gap: 500,
-      clear_display: true,
-      on_load: function() {
-        console.log('Trial loaded with image:', jsPsych.timelineVariable('stimulus_image'));
-      },
-      on_finish: function(data) {
-        // Store the response time
-        jsPsych.data.addProperties({
-          response_time: data.rt
-        });
-      }
-    },
-    {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: function() {
-        var last_trial = jsPsych.data.get().last(1).values()[0];
-        if (last_trial.rt === null) {
-          return `
-            <div style="text-align: center; font-size: 24px;">
-              <p>Too slow! Try to respond within 1200ms next time.</p>
-              <p>Press the spacebar to continue.</p>
-            </div>
-          `;
-        } else {
-          return null; // Skip feedback for successful responses
-        }
-      },
-      choices: [' '],
-      response_ends_trial: true,
-      post_trial_gap: 500,
-      clear_display: true,
-      conditional_function: function() {
-        var last_trial = jsPsych.data.get().last(1).values()[0];
-        return last_trial.rt === null; // Only show feedback for slow responses
-      }
-    }
-  ],
+const choice_trial = {
+  type: jsPsychHtmlKeyboardResponse,
+  data: { phase: 'choice' },
+  stimulus: function () {
+    const img =
+      jsPsych.timelineVariable('stimulus_image') ??
+      jsPsych.timelineVariable('image') ?? '';
+    return `
+      <div class="screen">
+        <div class="triple">  <!-- was: class="choice" -->
+          <img src="${media.box}" alt="top box">
+          <img src="${img}" alt="stimulus">
+          <img src="${media.box}" alt="bottom box">
+        </div>
+      </div>
+    `;
+  },
+  choices: ['a','l'],
+  trial_duration: 1500,
+  response_ends_trial: true,
+  post_trial_gap: 500,
+  clear_display: true
+};
+
+// Feedback (only if too slow on the immediately previous choice trial)
+const slow_feedback_block = {
+  conditional_function: function () {
+    const lastChoice = jsPsych.data.get().filter({ phase: 'choice' }).last(1).values()[0];
+    return lastChoice && lastChoice.rt === null;
+  },
+  timeline: [{
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+      <div style="text-align:center; font-size:24px;">
+        <p>Too slow! Try to respond faster next time.</p>
+        <p>Press the spacebar to continue.</p>
+      </div>`,
+    choices: [' '],
+    response_ends_trial: true,
+    post_trial_gap: 300,
+    clear_display: true
+  }]
+};
+
+// Randomized block
+const randomized_block = {
+  timeline: [choice_trial, slow_feedback_block],
   timeline_variables: trial_variables,
   randomize_order: true
 };
 
-/* add the instruction timeline to the main timeline */
+// Push to the main timeline (keep your instruction_timeline as-is)
 timeline.push(instruction_timeline);
+timeline.push(randomized_block);
 
-/* add the randomized timeline to the main timeline */
-timeline.push(main_timeline);
-
-var survey = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: function() {
-    return `
-      <div style="text-align: left; font-size: 24px;">
-        <p>Thank you for your participation! Before we end, please tell us more about yourself.</p>
-        
-        <div style="margin: 20px 0;">
-          <label for="education">What is your highest level of education?</label><br>
-          <select id="education" style="font-size: 20px; margin: 10px 0;">
-            <option value="">Select an option</option>
-            <option value="Less than High School">Less than High School</option>
-            <option value="High School">High School</option>
-            <option value="Some College">Some College</option>
-            <option value="Bachelor's Degree">Bachelor's Degree</option>
-            <option value="Master's Degree">Master's Degree</option>
-            <option value="Doctoral or Professional Degree">Doctoral or Professional Degree</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div style="margin: 20px 0;">
-          <label for="english">How often do you speak English during a normal day?</label><br>
-          <select id="english" style="font-size: 20px; margin: 10px 0;">
-            <option value="">Select an option</option>
-            <option value="Never">Never</option>
-            <option value="A little of the time">A little of the time</option>
-            <option value="Some of the time">Some of the time</option>
-            <option value="Most of the time">Most of the time</option>
-            <option value="All of the time">All of the time</option>
-          </select>
-        </div>
-
-        <div style="margin: 20px 0;">
-          <label for="purpose">What do you think this study was about?</label><br>
-          <textarea id="purpose" style="font-size: 20px; margin: 10px 0; width: 80%; height: 100px;"></textarea>
-        </div>
-
-        <p>Press the spacebar to submit your responses.</p>
-      </div>
-    `;
-  },
-  choices: [' '],
-  response_ends_trial: true,
-  on_finish: function(data) {
-    // Get values from the form
-    const education = document.getElementById('education').value;
-    const english = document.getElementById('english').value;
-    const purpose = document.getElementById('purpose').value;
-
-    // Store the responses
-    jsPsych.data.addProperties({
-      education: education,
-      english_exposure: english,
-      study_purpose: purpose
-    });
-  }
+// demographics
+const demographics = {
+  type: jsPsychSurveyMultiChoice,
+  preamble: '<p>Thank you for your participation! Before we end, please tell us more about yourself.</p>',
+  questions: [
+    {
+      prompt: 'What is your highest level of education?',
+      name: 'education',
+      options: [
+        'Less than High School', 'High School', 'Some College',
+        "Bachelor's Degree", "Master's Degree", 'Doctoral or Professional Degree', 'Other'
+      ],
+      required: true
+    },
+    {
+      prompt: 'How often do you speak English during a normal day?',
+      name: 'english',
+      options: ['Never','A little of the time','Some of the time','Most of the time','All of the time'],
+      required: true
+    }
+  ],
+  button_label: 'Continue'
 };
 
-timeline.push(survey);
+// purpose
+const purpose = {
+  type: jsPsychSurveyText,
+  questions: [
+    { prompt: 'What do you think this study was about?', name: 'purpose', required: true, rows: 5, columns: 60 }
+  ],
+  button_label: 'Submit'
+};
+
+// push to timeline
+timeline.push(demographics, purpose);
 
 /* run the experiment */
 jsPsych.run(timeline);
-
