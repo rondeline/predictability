@@ -132,6 +132,22 @@ target_analysis <- join_data |>
 
 View(target_analysis)
 
+target_analysis_age <- join_data |> 
+  filter(stimulus_item %in% c("bird", "turtle")) |>
+  mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
+                            stimulus_item == "turtle" ~ "box_car"),
+         correct = case_when(selected_item == answer ~ 1,
+                             TRUE ~ 0)) |> 
+  group_by(condition_label, age_years) |> 
+  summarise(mean_correct = mean(correct),
+            ci_l = binom.bayes(x = sum(correct), n = n())$lower,
+            ci_u = binom.bayes(x = sum(correct), n = n())$upper,
+            n = n()) |> 
+  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE))
+
+View(target_analysis_age)
+  
+
 # Data Viz
 ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
