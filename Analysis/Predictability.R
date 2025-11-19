@@ -6,7 +6,7 @@ library(ggthemes)
 library(binom)
 
 ## Read Data 
-data <- fromJSON("predictability_6325.json")
+data <- fromJSON("predictability_111025.json")
 
 unnest_data <- data |> 
   unnest(exp_data, names_sep = "_")
@@ -20,7 +20,7 @@ flat <- unnest_data |>
 
 tidy_data <- flat |> 
   select(child_hashed_id, response_date_created, response_eligibility, child_age_rounded, child_gender, child_condition_list, exp_data_trial_type, exp_data_trial_index, exp_data_response, exp_data_condition_label, exp_data_condition_number, exp_data_stimulus_item, exp_data_selected_item) |>
-  filter(as_datetime(response_date_created)>=as_datetime("2025-04-30"), 
+  filter(#as_datetime(response_date_created)>=as_datetime("2025-04-30"), 
          exp_data_trial_type!="survey") |>
   unnest(c(response_eligibility, 
          response_date_created,
@@ -71,9 +71,9 @@ join_data <- renaming_data |>
   left_join(survey, by = "child_hashed_id") |> 
   filter(!is.na(stimulus_item),
          as.Date(date_created) >= as.Date("2025-05-30")) |> 
-  mutate(age_years = case_when(age >= 3 & age < 4 ~ 3,
-                               age >= 4 & age < 5 ~ 4,
-                               age >= 5 & age < 6 ~ 5),
+  mutate(age_years = case_when(age >= 5 & age < 6 ~ 5,
+                               age >= 6 & age < 7 ~ 6,
+                               age >= 7 & age < 8 ~ 7),
          condition_label = case_when(condition_label == "uphorn" ~ "Unpredictable Noise",
                                      condition_label == "phorn" ~ "Predictable Noise",
                                      condition_label == "pstore" ~ "Predictable Speech",
@@ -84,7 +84,8 @@ View(join_data)
 
 # Analysis
 full_analysis <- join_data |>
-  filter(stimulus_item != "penguin") |> 
+  filter(stimulus_item != "penguin",
+         stimulus_item != "car") |> 
   mutate(answer = case_when(stimulus_item == "car" ~ "box_car",
                             stimulus_item == "ambulance" ~ "box_car",
                             stimulus_item == "bus" ~ "box_car",
@@ -92,7 +93,19 @@ full_analysis <- join_data |>
                             stimulus_item == "horse" ~ "box_dog",
                             stimulus_item == "lion" ~ "box_dog",
                             stimulus_item == "turtle" ~ "box_car",
-                            stimulus_item == "bird" ~ "box_car"),
+                            stimulus_item == "bird" ~ "box_car",
+                            stimulus_item == "butterfly" ~ "box_car",
+                            stimulus_item == "pickup" ~ "box_car",
+                            stimulus_item == "snake" ~ "box_car",
+                            stimulus_item == "car_blue" ~ "box_car",
+                            stimulus_item == "giraffe" ~ "box_dog",
+                            stimulus_item == "car_orange" ~ "box_car",
+                            stimulus_item == "police" ~ "box_car",
+                            stimulus_item == "tiger" ~ "box_dog",
+                            stimulus_item == "bunny" ~ "box_dog",
+                            stimulus_item == "firetruck" ~ "box_car",
+                            stimulus_item == "truck_green" ~ "box_car",
+                            stimulus_item == "fish" ~ "box_car"),
          correct = case_when(selected_item == answer ~ 1,
                              TRUE ~ 0),
          predictability = case_when(
@@ -109,6 +122,7 @@ View(full_analysis)
 
 ggplot(full_analysis, aes(x = predictability, y = mean_correct, fill = predictability)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
+  geom_errorbar(aes(ymin = ci_l, ymax = ci_u), width = 0.2) +
   ylim(0,1) +
   xlab("Condition") +
   ylab("Accuracy") +
@@ -118,9 +132,12 @@ ggplot(full_analysis, aes(x = predictability, y = mean_correct, fill = predictab
   theme(legend.position = "none")
 
 target_analysis <- join_data |> 
-  filter(stimulus_item %in% c("bird", "turtle")) |> 
+  filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |> 
   mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "turtle" ~ "box_car"),
+                            stimulus_item == "turtle" ~ "box_car",
+                            stimulus_item == "butterfly" ~ "box_car",
+                            stimulus_item == "snake" ~ "box_car",
+                            stimulus_item == "fish" ~ "box_car"),
          correct = case_when(selected_item == answer ~ 1,
                              TRUE ~ 0)) |> 
   group_by(condition_label) |> 
@@ -132,10 +149,51 @@ target_analysis <- join_data |>
 
 View(target_analysis)
 
+ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
+  geom_errorbar(aes(ymin = ci_l, ymax = ci_u), width = 0.2) +
+  ylim(0,1) +
+  xlab("Condition") +
+  ylab("Accuracy") +
+  geom_hline(yintercept = 0.5, linetype = "dashed") +
+  #coord_flip() +
+  theme_few() +
+  theme(legend.position = "none")
+
+nontarget_analysis <- join_data |> 
+  filter(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion")) |> 
+  mutate(answer = case_when(stimulus_item == "bus" ~ "box_car",
+                            stimulus_item == "ambulance" ~ "box_car",
+                            stimulus_item == "truck" ~ "box_car",
+                            stimulus_item == "horse" ~ "box_dog",
+                            stimulus_item == "lion" ~ "box_dog",
+                            stimulus_item == "pickup" ~ "box_car",
+                            stimulus_item == "car_blue" ~ "box_car",
+                            stimulus_item == "giraffe" ~ "box_dog",
+                            stimulus_item == "car_orange" ~ "box_car",
+                            stimulus_item == "police" ~ "box_car",
+                            stimulus_item == "tiger" ~ "box_dog",
+                            stimulus_item == "bunny" ~ "box_dog",
+                            stimulus_item == "firetruck" ~ "box_car",
+                            stimulus_item == "truck_green" ~ "box_car"),
+         correct = case_when(selected_item == answer ~ 1,
+                             TRUE ~ 0)) |> 
+  group_by(condition_label) |> 
+  summarise(mean_correct = mean(correct),
+            ci_l = binom.bayes(x = sum(correct), n = n())$lower,
+            ci_u = binom.bayes(x = sum(correct), n = n())$upper,
+            n = n()) |> 
+  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE))
+
+View(nontarget_analysis)
+
 target_analysis_age <- join_data |> 
-  filter(stimulus_item %in% c("bird", "turtle")) |>
+  filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |>
   mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "turtle" ~ "box_car"),
+                            stimulus_item == "turtle" ~ "box_car",
+                            stimulus_item == "butterfly" ~ "box_car",
+                            stimulus_item == "snake" ~ "box_car",
+                            stimulus_item == "fish" ~ "box_car"),
          correct = case_when(selected_item == answer ~ 1,
                              TRUE ~ 0)) |> 
   group_by(condition_label, age_years) |> 
@@ -147,7 +205,6 @@ target_analysis_age <- join_data |>
 
 View(target_analysis_age)
   
-
 # Data Viz
 ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +

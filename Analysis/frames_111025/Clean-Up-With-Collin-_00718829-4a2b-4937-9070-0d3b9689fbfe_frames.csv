@@ -1,0 +1,564 @@
+"response_uuid","child_hashed_id","frame_id","event_number","key","value"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","0-preload","","success",True
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","0-preload","","timeout",False
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","0-preload","","trial_type","preload"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","0-preload","","trial_index",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","0-preload","","time_elapsed",140
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","0-preload","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","1-preload","","success",True
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","1-preload","","timeout",False
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","1-preload","","trial_type","preload"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","1-preload","","trial_index",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","1-preload","","time_elapsed",3373
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","1-preload","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","2-preload","","success",True
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","2-preload","","timeout",False
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","2-preload","","trial_type","preload"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","2-preload","","trial_index",2
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","2-preload","","time_elapsed",4347
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","2-preload","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","rt",3583
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","stimulus","Welcome! Press ""next"" to continue."
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","trial_index",3
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","time_elapsed",7931
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","3-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","rt",13252
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","camId","932ae668a69ddc6382d6200fa1c23a9e43f220d70fae426baf4d41df61382073"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","micId","76d058762909f22e2eb995cbae6ee35ca3c32c1753ce1cfad2d69dca2cc60b4d"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","trial_type","video-config-plugin"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","trial_index",4
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","time_elapsed",21248
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","4-video-config-plugin","","plugin_version","4.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","5-consent-video","","chs_type","consent"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","5-consent-video","","trial_type","consent-video"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","5-consent-video","","trial_index",5
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","5-consent-video","","time_elapsed",46013
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","5-consent-video","","plugin_version","4.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","rt",8091
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","chs_type","consent"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","response.audio",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","response.video",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","response.Ready?",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","response.question1",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","trial_type","survey"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","trial_index",6
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","time_elapsed",54171
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","6-survey","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","7-start-record-plugin","","trial_type","start-record-plugin"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","7-start-record-plugin","","trial_index",7
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","7-start-record-plugin","","time_elapsed",54349
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","7-start-record-plugin","","plugin_version",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","8-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","8-html-button-response","","trial_index",8
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","8-html-button-response","","time_elapsed",60867
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","8-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","8-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","8-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","rt",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","response",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","stimulus","<p>Get ready!</p>"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","trial_type","html-keyboard-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","trial_index",9
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","time_elapsed",61370
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","9-html-keyboard-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","rt",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","response",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","stimulus","
+      <div style=""display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;"">
+          <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png"" id=""collin"" style=""width: 40vw; max-width: 500px; height: auto;"">
+      </div>
+      <div style=""display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;"">
+          <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png"" id=""room"" style=""width: 80vw; max-width: 800px; height: auto;"">
+      </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","trial_index",10
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","time_elapsed",84386
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","10-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","rt",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","response",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/animals.png"" id=""animals"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/vehicles.png"" id=""vehicles"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/green.png"" id=""green"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","trial_index",11
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","time_elapsed",107890
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","11-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","rt",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","response",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin: 50px; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/dog.png"" id=""dog"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin: 50px; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/convertible.png"" id=""convertible"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+        <div style=""display: flex; justify-content: center; margin: 50px; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/frog.png"" id=""frog"" style=""width: 50vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","trial_index",12
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","time_elapsed",133896
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","12-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","rt",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","response",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","stimulus","<p>Trials complete! Please wait...</p>"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","trial_type","html-keyboard-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","trial_index",13
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","time_elapsed",134399
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","13-html-keyboard-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","rt",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","response",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","stimulus","
+        <div style=""display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; max-width: 90vw; margin: auto;"">
+          <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/room.png"" id=""room"" style=""width: 80vw; max-width: 800px; height: auto;"">
+      </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","trial_index",14
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","time_elapsed",145403
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","14-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","rt",3492
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/penguin.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","trial_index",15
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","time_elapsed",148899
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","stimulus_item","penguin"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","15-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","rt",243
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/car.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","trial_index",16
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","time_elapsed",149146
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","stimulus_item","car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","16-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","rt",438
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/bunny.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","trial_index",17
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","time_elapsed",149587
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","17-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","rt",1764
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/truck.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","trial_index",18
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","time_elapsed",151357
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","stimulus_item","truck"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","18-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","rt",1846
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/snake.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","trial_index",19
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","time_elapsed",153207
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","19-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","rt",5994
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/truck_green.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","trial_index",20
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","time_elapsed",159205
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","20-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","rt",3258
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/car_blue.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","trial_index",21
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","time_elapsed",162469
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","21-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","rt",605
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/car_orange.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","trial_index",22
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","time_elapsed",163083
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","22-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","rt",714
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/police.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","trial_index",23
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","time_elapsed",163802
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","23-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","rt",1149
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/pickup.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","trial_index",24
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","time_elapsed",164955
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","24-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","rt",836
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/bus.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","trial_index",25
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","time_elapsed",165795
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","25-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","rt",3514
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/bird.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","trial_index",26
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","time_elapsed",169314
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","stimulus_item","bird"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","26-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","rt",1079
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/lion.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","trial_index",27
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","time_elapsed",170399
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","stimulus_item","lion"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","27-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","rt",3730
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/fish.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","trial_index",28
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","time_elapsed",174134
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","28-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","rt",1368
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/butterfly.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","trial_index",29
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","time_elapsed",175506
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","29-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","rt",868
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/turtle.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","trial_index",30
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","time_elapsed",176379
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","stimulus_item","turtle"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","30-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","rt",1224
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/horse.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","trial_index",31
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","time_elapsed",177614
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","stimulus_item","horse"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","31-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","rt",2910
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/giraffe.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","trial_index",32
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","time_elapsed",180533
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","32-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","rt",1630
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/cow.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","trial_index",33
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","time_elapsed",182171
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","33-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","rt",854
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/tiger.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","trial_index",34
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","time_elapsed",183029
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","34-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","rt",246
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/ambulance.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","trial_index",35
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","time_elapsed",183279
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","selected_item","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","stimulus_item","ambulance"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","35-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","rt",2448
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","choice_0","box_dog"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","choice_1","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","response",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; margin-top: 5px;"">
+            <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/firetruck.png"" style=""width: 20vw; max-width: 300px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","trial_index",36
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","time_elapsed",185731
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","selected_item","box_car"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","stimulus_item","bus"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","condition_label","upstore"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","36-html-button-response","","condition_number",1
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","37-stop-record-plugin","","trial_type","stop-record-plugin"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","37-stop-record-plugin","","trial_index",37
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","37-stop-record-plugin","","time_elapsed",189636
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","37-stop-record-plugin","","plugin_version",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","rt",9606
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","response",0
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","stimulus","
+        <div style=""display: flex; justify-content: center; align-items: flex-start; gap: 15px; margin-top: 20px; margin-bottom: 100px;"">
+        <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/collin.png"" style=""width: 40vw; max-width: 500px; height: auto;"">
+        <img src=""https://raw.githubusercontent.com/rondeline/predictability/master/img/ribbon.png"" style=""width: 20vw; max-width: 200px; height: auto;"">
+        </div>
+    "
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","trial_type","html-button-response"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","trial_index",38
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","time_elapsed",199245
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","38-html-button-response","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","rt",33749
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","chs_type","consent"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","response.race.0","Caucasian/White"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","response.email","kaziev.freida@gmail.com"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","response.english","All of the time"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","response.counting","Are somewhat bothered"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","response.education","Bachelor's degree"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","trial_type","survey"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","trial_index",39
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","time_elapsed",233045
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","39-survey","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","rt",23691
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","chs_type","exit"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","response.feedback",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","response.birthDate","2018-07-25"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","response.useOfMedia","private"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","response.withdrawal",False
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","response.databraryShare","yes"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","trial_type","survey"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","trial_index",40
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","time_elapsed",256797
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","40-survey","","plugin_version","2.0.0"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","rt",3128
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","chs_type","consent"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","response.question1",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","response.question2",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","response.question3",""
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","trial_type","survey"
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","trial_index",41
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","time_elapsed",259952
+"00718829-4a2b-4937-9070-0d3b9689fbfe","SE6YT2","41-survey","","plugin_version","2.0.0"
