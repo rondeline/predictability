@@ -1,0 +1,32 @@
+% Make speech-shaped noise for two speech files
+
+files = {'p_store_5_test.wav', 'target_test'};
+
+for i = 1:length(files)
+
+    % Read file
+    [speech, fs] = audioread(files{i});
+
+    % Convert stereo to mono if needed
+    speech = mean(speech, 2);
+
+    % Generate white noise same length as speech
+    noise = randn(size(speech));
+
+    % Shape noise to match speech spectrum
+    S = fft(speech);
+    N = fft(noise);
+    ssn = real(ifft(abs(S) .* exp(1i * angle(N))));
+
+    % Normalize to avoid clipping
+    ssn = ssn / max(abs(ssn)) * 0.95;
+
+    % Create output filename
+    [~, name, ~] = fileparts(files{i});
+    outname = [name '_SSN.wav'];
+
+    % Save file
+    audiowrite(outname, ssn, fs);
+
+    fprintf('Created %s\n', outname);
+end
