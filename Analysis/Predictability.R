@@ -114,9 +114,7 @@ join_data <- renaming_data |>
     )
   ) |> 
   filter(keep_row) |>   
-  select(-keep_row)     
-
-
+  select(-keep_row)
 
 View(join_data)
 
@@ -198,7 +196,9 @@ full_analysis_trial <- join_data |>
          predictability = case_when(
            condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
            condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
-           TRUE ~ "Silence"))
+           TRUE ~ "Silence")) 
+  
+full_analysis_trial$predictability <- factor(full_analysis_trial$predictability, levels = c('Silence', 'Predictable', 'Unpredictable'))
 
 full_analysis_model <- stan_glmer(correct ~ predictability + (1 | child_hashed_id),
       family = binomial,
@@ -261,6 +261,8 @@ target_analysis_trial <- join_data |>
 target_analysis_model <- stan_glmer(correct ~ predictability + (1 | child_hashed_id),
                                   family = binomial,
                                   data = target_analysis_trial)
+
+target_analysis_emmeans <- emmeans(target_analysis_model, pairwise ~ predictability)
 
 target_analysis_trial_summary <- summary(target_analysis_model,
         probs = c(0.025, 0.975),
@@ -343,6 +345,8 @@ nontarget_analysis_model <- stan_glmer(correct ~ predictability + (1 | child_has
 nontarget_analysis_trial_summary <- summary(nontarget_analysis_model,
                                          probs = c(0.025, 0.975),
                                          digits = 2)
+
+nontarget_analysis_emmeans <- emmeans(nontarget_analysis_model, pairwise ~ predictability)
 
 nontarget_analysis_age <- join_data |> 
   filter(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion")) |> 
