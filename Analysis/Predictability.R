@@ -116,8 +116,6 @@ join_data <- renaming_data |>
   filter(keep_row) |>   
   select(-keep_row)
 
-View(join_data)
-
 # Analysis
 full_analysis <- join_data |>
   filter(stimulus_item != "penguin",
@@ -257,7 +255,15 @@ target_analysis_trial <- join_data |>
            condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
            condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
            TRUE ~ "Silence"))
+
+target_analysis_trial_participant <- target_analysis_trial |> 
+  ungroup() |> 
+  group_by(child_hashed_id) |> 
+  reframe(predictability = predictability,
+          mean_correct = mean(correct)) |>
   
+View(target_analysis_trial_participant)
+
 target_analysis_model <- stan_glmer(correct ~ predictability + (1 | child_hashed_id),
                                   family = binomial,
                                   data = target_analysis_trial)
@@ -425,8 +431,6 @@ grouped_analysis <- join_data |>
   
   View(grouped_analysis)
   
-  
-  
 # Data Viz
 ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
@@ -447,6 +451,12 @@ ggplot(grouped_analysis, aes(x = predictability, y = mean_correct, fill = predic
   geom_hline(yintercept = 0.5, linetype = "dashed") +
   theme_few() +
   theme(legend.position = "none")
+
+#Presentation Order- Unpredictable
+presentation_order <- join_data |> 
+  filter(condition_label == "Unpredictable Speech",
+         stimulus_item %in% c("butterfly", "snake", "bird", "fish", "turtle"))
+
 
 age_analysis <- join_data |> 
   filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |> 

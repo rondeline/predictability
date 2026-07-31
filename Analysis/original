@@ -1,0 +1,2275 @@
+{
+    "frames": {
+        "welcome": {
+            "kind": "exp-lookit-text",
+            "blocks": [
+                {
+                    "title": "Welcome! Press 'next' to continue.",
+                    "position": "center"
+                }
+            ],
+            "showPreviousButton": false
+        },
+        "positioning": {
+            "kind": "exp-video-config-quality",
+            "title": "Positioning",
+            "introText": "This is a video study and we want to be able to see your child's face. It's time to get your child & check yourself out on your webcam!",
+            "showRecordMenu": false,
+            "requireTestVideo": false,
+            "completedItemText": "Got it!",
+            "instructionBlocks": [
+                {
+                    "text": "You and your child can sit in any position.",
+                    "title": "Get comfortable" 
+                },
+                {
+                    "text": "Go ahead and get settled and use the webcam preview to make sure your child’s whole face and torso are in view.",
+                    "title": "Take a few moments"
+                },
+                {
+                    "text": "Press the 'Next' button down below if you and your child are in position and ready to go.",
+                    "title": "When you're ready"
+                }
+            ],
+            "nextButtonText": "My child and I are in position and ready to start!",
+            "showPreviousButton": true,
+            "requireItemConfirmation": true,
+            "recordingInstructionText": "We will begin recording after completing the video consent on the next page."
+        },
+        "video-config": {
+            "kind": "exp-video-config",
+            "troubleshootingIntro": "If you are having any trouble with completing the study or would like us to walk you through the setup, please email Rondeline Williams, rondeline.williams@stanford.edu."
+        },
+        "video-consent": {
+            "kind": "exp-lookit-video-consent",
+            "template": "consent_005",
+            "PIName": "Michael C. Frank",
+            "institution": "Stanford University",
+            "PIContact": "rondeline.williams@stanford.edu",
+            "purpose": "This study will help us learn how young children use sounds for decision-making.",
+            "procedures": "Our studies are designed to be fun, age-appropriate activities for young children, and easily conducted online. Your child will be shown a set of short, animated videos and then will be asked to provide a handful of responses about them. We will ask you (the parent) to turn around or sit away from you child's view (unless your child needs help pressing buttons) to avoid influencing your child's responses. There are no right or wrong answers, so your child's true responses are okay!",
+            "risk_statement": "We will pace each session appropriately, and participation in our research has no foreseeable risks or discomforts to you or your child. If your child wants to stop participating for any reason, you may end the session with no penalty. We cannot and do not guarantee that you will receive any benefits from participation, apart from the satisfaction of contributing to scientific research.",
+            "payment": "There are no costs to participating. There are also no known risks associated with this study beyond those of everyday life. Although this study will not benefit your child directly, it will add to our understanding of how children think in general. If indicated in the study description, you may be compensated for participating in this study; if this is not stated in the study description, then you will not receive any payment for your participation.",
+            "datause": "The researchers and study staff follow federal and state laws to protect your privacy, so all of your information and research records will be kept confidential. The only exception to these procedures for maintaining confidentiality is that we are required by law to report to the appropriate authorities suspicion of harm to your child or to others. More information on how we keep your videos and data private can be found at lookit.mit.edu/faq.",
+            "include_databrary": true,
+            "additional_video_privacy_statement": "At the end of the session, we will also ask your permission to use your videos as examples for presentations to academic or scientific audiences. Your decision will not affect your participation or any compensation you may receive.",
+            "gdpr": false,
+            "research_rights_statement": "The Institutional Review Board (IRB) of Stanford University has approved this research study. If you have questions regarding your rights as a research subject you may contact the IRB office at 650-723-2480, or by mail at Research Compliance Office, Stanford University, 1705 El Camino Real, Palo Alto, CA 94306."
+        },
+         "start-recording": {
+            "kind": "exp-lookit-start-recording",
+            "imageAnimation": "study_image.png",
+            "displayFullscreen": true
+        },
+        "stop-recording": {
+            "kind": "exp-lookit-stop-recording",
+            "imageAnimation": "study_image.png",
+            "displayFullscreen": true
+        },
+        "directions": {
+            "kind": "group",
+            "commonFrameProperties": {
+                "backgroundColor": "white",
+                    "nextButtonText": "Next",
+                    "pauseKey": " ",
+                    "pauseKeyDescription": " ",
+                    "showReplayButton": true,
+                    "pauseImage": "crayons.png",
+                    "pauseAudio": "RMS70_crayons",
+                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                    "audioTypes": [
+                        "ogg",
+                        "mp3",
+                        "wav"
+                    ],
+                    "videoTypes": [
+                        "webm",
+                        "mp4"
+                    ]
+            },
+            "frames": {
+                "intro-video": {
+                    "kind": "exp-lookit-video",
+                    "video": {
+                        "source": "directions",
+                        "position": "center"
+                    },
+                    "autoProceed": true
+                },
+                "comprehension-check": {
+                    "kind": "exp-lookit-images-audio",
+                    "choiceRequired": true,
+                    "audio": "RMS70_comprehension",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 37,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "one",
+                            "src": "one.png",
+                            "top": 40,
+                            "left": 10,
+                            "width": 20,
+                            "correct": true
+                        },
+                        {
+                            "id": "two",
+                            "src": "two.png",
+                            "top": 40,
+                            "left": 70,
+                            "width": 20
+                        }
+                    ],
+                    "selectNextFrame": "function(frames, frameIndex, frameData, expData, sequence, child, pastSessions) { var choice = frameData['choice']; if (choice === 'one') { return 'correct'; } else { return 'incorrect'; }}"
+                },
+                "correct": {
+                    "kind": "exp-lookit-images-audio",
+                    "audio": "RMS70_correct_comp_check",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 37,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        }
+                    ],
+                    "autoProceed": true,
+                    "selectNextFrame": "function(frames) { return 'next-section'; }"
+                },
+                "incorrect": {
+                    "kind": "exp-lookit-images-audio",
+                    "audio": "RMS70_incorrect_comp_check",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 37,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        }
+                    ],
+                    "autoProceed": true,
+                    "selectNextFrame": "function(frames) { return 'comprehension-check'; }"
+                }
+            },
+            "sequence": ["intro-video", "comprehension-check", "correct", "incorrect"]
+        },
+        "picture-training": {
+            "kind": "group",
+            "commonFrameProperties": {
+                "backgroundColor": "white",
+                "nextButtonText": "Next",
+                "nextButtonColor": "blue",
+                "pauseKey": " ",
+                "pauseKeyDescription": " ",
+                "showReplayButton": true,
+                "pauseImage": "crayons.png",
+                "pauseAudio": "RMS70_crayons",
+                "pauseText": "Game paused. Please press the spacebar to resume.",
+                "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                "audioTypes": [
+                    "ogg",
+                    "mp3",
+                    "wav"
+                ],
+                "videoTypes": [
+                    "webm",
+                    "mp4"
+                ]
+            },
+            "frames": {
+                "intro": {
+                    "kind": "exp-lookit-images-audio",
+                    "audio": "RMS70_picture_intro",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 0,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "picture_game",
+                            "src": "book_picture.png",
+                            "top": 30,
+                            "left": 30,
+                            "width": 40
+                        }
+                    ],
+                    "autoProceed": true
+                },
+                "instructions": {
+                    "kind": "exp-lookit-video",
+                    "video": {
+                        "source": "RMS70_instructions_picture",
+                        "position": "fill"
+                    },
+                    "autoProceed": true
+                },
+                "bunny-video": {
+                    "kind": "exp-lookit-video",
+                    "video": {
+                        "source": "RMS70_bunny",
+                        "top": 10,
+                        "left": 20,
+                        "width": 60
+                    },
+                    "autoProceed": true
+                },
+                "bunny-trial": {
+                    "kind": "exp-lookit-images-audio",
+                    "choiceRequired": true,
+                    "correctChoiceRequired": true,
+                    "audio": "RMS70_bunny_tap",
+                    "images": [
+                        {
+                            "id": "bunny_picture",
+                            "src": "bunny_picture.png",
+                            "top": 10,
+                            "left": 20,
+                            "width": 60,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "apple",
+                            "src": "apple.png",
+                            "top": 75,
+                            "left": 0
+                        },
+                        {
+                            "id": "banana",
+                            "src": "banana.png",
+                            "top": 75,
+                            "left": 28
+                        },
+                        {
+                            "id": "orange",
+                            "src": "orange.png",
+                            "top": 75,
+                            "left": 56
+                        },
+                        {
+                            "id": "bunny",
+                            "src": "bunny.png",
+                            "top": 75,
+                            "left": 84,
+                            "correct": true
+                        }
+                    ]
+                },
+                "gotit": {
+                    "kind": "exp-lookit-video",
+                    "video": {
+                        "source": "RMS70_gotit",
+                        "top": 20,
+                        "left": 30,
+                        "width": 60
+                    },
+                    "autoProceed": false
+                },
+                "car-trial": {
+                    "kind": "exp-lookit-images-audio",
+                    "choiceRequired": true,
+                    "correctChoiceRequired": true,
+                    "audio": "RMS70_prompt",
+                    "images": [
+                        {
+                            "id": "car_picture",
+                            "src": "car_picture.png",
+                            "top": 10,
+                            "left": 20,
+                            "width": 60,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "triangle",
+                            "src": "triangle.png",
+                            "top": 75,
+                            "left": 0
+                        },
+                        {
+                            "id": "car",
+                            "src": "car.png",
+                            "top": 75,
+                            "left": 28,
+                            "correct": true
+                        },
+                        {
+                            "id": "square",
+                            "src": "square.png",
+                            "top": 75,
+                            "left": 56
+                        },
+                        {
+                            "id": "circle",
+                            "src": "circle.png",
+                            "top": 75,
+                            "left": 84
+                        }
+                    ]
+                },
+                "ready": {
+                    "kind": "exp-lookit-video",
+                    "video": {
+                        "source": "RMS70_readytoplay",
+                        "top": 20,
+                        "left": 30,
+                        "width": 60
+                    },
+                    "autoProceed": false
+                }
+            },
+            "sequence": ["intro", "instructions", "bunny-video", "bunny-trial", "gotit", "car-trial", "ready"]
+        },
+        "test-trials": {
+            "kind": "choice",
+            "sampler": "permute",
+            "commonFrameProperties": {
+                "backgroundColor": "white",
+                    "nextButtonText": "Next",
+                    "pauseKey": " ",
+                    "pauseKeyDescription": " ",
+                    "showReplayButton": true,
+                    "pauseImage": "crayons.png",
+                    "pauseAudio": "RMS70_crayons",
+                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                    "audioTypes": [
+                        "ogg",
+                        "mp3",
+                        "wav"
+                    ],
+                    "videoTypes": [
+                        "webm",
+                        "mp4"
+                    ]
+            },
+            "frameOptions": [
+                {
+                    "id": "picture-1",
+                    "kind": "group",
+                    "commonFrameProperties": {
+                        "backgroundColor": "white",
+                            "nextButtonText": "Next",
+                            "pauseKey": " ",
+                            "pauseKeyDescription": " ",
+                            "showReplayButton": true,
+                            "pauseImage": "crayons.png",
+                            "pauseAudio": "RMS70_crayons",
+                            "pauseText": "Game paused. Please press the spacebar to resume.",
+                            "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                            "audioTypes": [
+                                "ogg",
+                                "mp3",
+                                "wav"
+                            ],
+                            "videoTypes": [
+                                "webm",
+                                "mp4"
+                            ]
+                    },
+                    "frameList": [
+                        {
+                            "id": "number-training",
+                            "kind": "group",
+                            "commonFrameProperties": {
+                                "backgroundColor": "white",
+                                    "nextButtonText": "Next",
+                                    "nextButtonColor": "blue",
+                                    "pauseKey": " ",
+                                    "pauseKeyDescription": " ",
+                                    "showReplayButton": true,
+                                    "pauseImage": "crayons.png",
+                                    "pauseAudio": "RMS70_crayons",
+                                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                                    "audioTypes": [
+                                        "ogg",
+                                        "mp3",
+                                        "wav"
+                                    ],
+                                    "videoTypes": [
+                                        "webm",
+                                        "mp4"
+                                    ]
+                            },
+                            "frameList": [
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "audio": "RMS70_number_intro",
+                                    "images": [
+                                        {
+                                            "id": "face",
+                                            "src": "floatinghead.png",
+                                            "top": 5,
+                                            "left":0,
+                                            "width": 20
+                                        },
+                                        {
+                                            "id": "number_game",
+                                            "src": "balls.png",
+                                            "top": 30,
+                                            "left": 30
+                                        }
+                                    ],
+                                    "autoProceed": true
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_instructions_number",
+                                        "top": 10,
+                                        "left": 20,
+                                        "width": 60
+                                    },
+                                    "autoProceed": true
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "apples_1",
+                                        "position": "fill"
+                                    },
+                                    "autoProceed": true,
+                                    "requiredDuration": 5
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "correctChoiceRequired": true,
+                                    "audio": "apples_2",
+                                    "images": [
+                                        {
+                                            "id": "apples",
+                                            "src": "apples.png",
+                                            "top": 10,
+                                            "left": 10,
+                                            "width": 80,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "one",
+                                            "src": "one.png",
+                                            "top": 85,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "two",
+                                            "src": "two.png",
+                                            "top": 85,
+                                            "left": 10
+                                        },
+                                        {
+                                            "id": "three",
+                                            "src": "three.png",
+                                            "top": 85,
+                                            "left": 20,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "four",
+                                            "src": "four.png",
+                                            "top": 85,
+                                            "left": 30
+                                        },
+                                        {
+                                            "id": "five",
+                                            "src": "five.png",
+                                            "top": 85,
+                                            "left": 40
+                                        },
+                                        {
+                                            "id": "six",
+                                            "src": "six.png",
+                                            "top": 85,
+                                            "left": 50
+                                        },
+                                        {
+                                            "id": "seven",
+                                            "src": "seven.png",
+                                            "top": 85,
+                                            "left": 60
+                                        },
+                                        {
+                                            "id": "eight",
+                                            "src": "eight.png",
+                                            "top": 85,
+                                            "left": 70
+                                        },
+                                        {
+                                            "id": "nine",
+                                            "src": "nine.png",
+                                            "top": 85,
+                                            "left": 80
+                                        },
+                                        {
+                                            "id": "ten",
+                                            "src": "ten.png",
+                                            "top": 85,
+                                            "left": 90
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_gotit",
+                                        "top": 20,
+                                        "left": 30,
+                                        "width": 60
+                                    },
+                                    "autoProceed": false
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "correctChoiceRequired": true,
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_fish",
+                                    "images": [
+                                        {
+                                            "id": "goldfish",
+                                            "src": "goldfish.png",
+                                            "top": 10,
+                                            "left": 10,
+                                            "width": 80,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "one",
+                                            "src": "one.png",
+                                            "top": 85,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "two",
+                                            "src": "two.png",
+                                            "top": 85,
+                                            "left": 10
+                                        },
+                                        {
+                                            "id": "three",
+                                            "src": "three.png",
+                                            "top": 85,
+                                            "left": 20
+                                        },
+                                        {
+                                            "id": "four",
+                                            "src": "four.png",
+                                            "top": 85,
+                                            "left": 30
+                                        },
+                                        {
+                                            "id": "five",
+                                            "src": "five.png",
+                                            "top": 85,
+                                            "left": 40
+                                        },
+                                        {
+                                            "id": "six",
+                                            "src": "six.png",
+                                            "top": 85,
+                                            "left": 50
+                                        },
+                                        {
+                                            "id": "seven",
+                                            "src": "seven.png",
+                                            "top": 85,
+                                            "left": 60
+                                        },
+                                        {
+                                            "id": "eight",
+                                            "src": "eight.png",
+                                            "top": 85,
+                                            "left": 70
+                                        },
+                                        {
+                                            "id": "nine",
+                                            "src": "nine.png",
+                                            "top": 85,
+                                            "left": 80
+                                        },
+                                        {
+                                            "id": "ten",
+                                            "src": "ten.png",
+                                            "top": 85,
+                                            "left": 90
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_readytoplay",
+                                        "top": 20,
+                                        "left": 30,
+                                        "width": 60
+                                    },
+                                    "autoProceed": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": "picture-trials-1",
+                            "kind": "choice",
+                            "sampler": "permute",
+                            "commonFrameProperties": {
+                                "backgroundColor": "white",
+                                    "nextButtonText": "Next",
+                                    "pauseKey": " ",
+                                    "pauseKeyDescription": " ",
+                                    "showReplayButton": true,
+                                    "pauseImage": "crayons.png",
+                                    "pauseAudio": "RMS70_crayons",
+                                    "canMakeChoiceBeforeAudioFinished": true,
+                                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                                    "audioTypes": [
+                                        "ogg",
+                                        "mp3",
+                                        "wav"
+                                    ],
+                                    "videoTypes": [
+                                        "webm",
+                                        "mp4"
+                                    ]
+                            },
+                            "frameOptions": [
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "umbrella_picture",
+                                            "src": "umbrella_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "mug_blue",
+                                            "src": "mug_blue.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "mug_white",
+                                            "src": "mug_white.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "mug_brown",
+                                            "src": "mug_brown.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "umbrella",
+                                            "src": "umbrella.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "dollar_picture",
+                                            "src": "dollar_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "bush",
+                                            "src": "bush.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "tulips",
+                                            "src": "tulips.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "dollar",
+                                            "src": "dollar.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "tree",
+                                            "src": "tree.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "sunglasses_picture",
+                                            "src": "sunglasses_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "guitar",
+                                            "src": "guitar.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "sunglasses",
+                                            "src": "sunglasses.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "drum",
+                                            "src": "drum.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "trumpet",
+                                            "src": "trumpet.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "gift_picture",
+                                            "src": "gift_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "gift",
+                                            "src": "gift.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "circle",
+                                            "src": "circle.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "baseball",
+                                            "src": "baseball.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "clock",
+                                            "src": "clock.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "pencil_picture",
+                                            "src": "pencil_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "mars",
+                                            "src": "mars.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "spaceship",
+                                            "src": "spaceship.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "moon",
+                                            "src": "moon.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "pencil",
+                                            "src": "pencil.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "4_picture",
+                                            "src": "4_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "4",
+                                            "src": "4.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "r",
+                                            "src": "r.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "l",
+                                            "src": "l.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "t",
+                                            "src": "t.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "pillow_picture",
+                                            "src": "pillow_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "nose",
+                                            "src": "nose.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "foot",
+                                            "src": "foot.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "hand",
+                                            "src": "hand.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "pillow",
+                                            "src": "pillow.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "plate_picture",
+                                            "src": "plate_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "spoon",
+                                            "src": "spoon.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "fork",
+                                            "src": "fork.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "plate",
+                                            "src": "plate.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "knife",
+                                            "src": "knife.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "table_picture",
+                                            "src": "table_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "chair",
+                                            "src": "chair.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "table",
+                                            "src": "table.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "couch",
+                                            "src": "couch.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "bench",
+                                            "src": "bench.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "cat_picture",
+                                            "src": "cat_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "cat",
+                                            "src": "cat.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "sock",
+                                            "src": "sock.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "dress",
+                                            "src": "dress.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "shirt",
+                                            "src": "shirt.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {   
+                            "id": "number-finished",
+                            "kind": "group",
+                             "commonFrameProperties": {
+                                "backgroundColor": "white",
+                                    "nextButtonText": "Next",
+                                    "pauseKey": " ",
+                                    "pauseKeyDescription": " ",
+                                    "showReplayButton": true,
+                                    "pauseImage": "crayons.png",
+                                    "pauseAudio": "RMS70_crayons",
+                                    "canMakeChoiceBeforeAudioFinished": true,
+                                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                                    "audioTypes": [
+                                        "ogg",
+                                        "mp3",
+                                        "wav"
+                                    ],
+                                    "videoTypes": [
+                                        "webm",
+                                        "mp4"
+                                    ]
+                            },
+                            "frameList": [
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_finished",
+                                        "top": 20,
+                                        "left": 30,
+                                        "width": 60
+                                    },
+                                    "autoProceed": true
+                                },
+                                {
+                                    "id": "number-difficulty",
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_difficulty",
+                                    "images": [
+                                        {
+                                            "id": "face",
+                                            "src": "floatinghead.png",
+                                            "top": 5,
+                                            "left":0,
+                                            "width": 20,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "happy",
+                                            "src": "happy.png",
+                                            "top": 40,
+                                            "left": 0,
+                                            "width": 40
+                                        },
+                                        {
+                                            "id": "sad",
+                                            "src": "sad.png",
+                                            "top": 40,
+                                            "left": 40,
+                                            "width": 40
+                                        }
+                                    ],
+                                    "highlights": [
+                                        {
+                                            "range": [
+                                                5,
+                                                7
+                                            ],
+                                            "imageId": "happy"
+                                        },
+                                        {
+                                            "range": [
+                                                8,
+                                                10
+                                            ],
+                                            "imageId": "sad"
+                                        }
+                                    ],
+                                    "parentTextBlock": {
+                                        "text": "If your child is unable to click the image they have selected on their own, you may click the image for them.",
+                                        "title": "Parents"
+                                    }
+                                }
+                            ]
+                            
+                        }
+                    ]
+                },
+                {
+                    "id": "picture-2",
+                    "kind": "group",
+                    "frameList": [
+                        {
+                            "id": "pic",
+                            "kind": "group",
+                            "commonFrameProperties": {
+                                "backgroundColor": "white",
+                                    "nextButtonText": "Next",
+                                    "nextButtonColor": "blue",
+                                    "pauseKey": " ",
+                                    "pauseKeyDescription": " ",
+                                    "showReplayButton": true,
+                                    "pauseImage": "crayons.png",
+                                    "pauseAudio": "RMS70_crayons",
+                                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                                    "audioTypes": [
+                                        "ogg",
+                                        "mp3",
+                                        "wav"
+                                    ],
+                                    "videoTypes": [
+                                        "webm",
+                                        "mp4"
+                                    ]
+                            },
+                            "frameList": [
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "audio": "RMS70_picture_intro",
+                                    "images": [
+                                        {
+                                            "id": "face",
+                                            "src": "floatinghead.png",
+                                            "top": 5,
+                                            "left": 0,
+                                            "width": 20,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "picture_game",
+                                            "src": "book_picture.png",
+                                            "top": 30,
+                                            "left": 30,
+                                            "width": 40
+                                        }
+                                    ],
+                                    "autoProceed": true
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_instructions_picture",
+                                        "position": "fill"
+                                    },
+                                    "autoProceed": true
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_bunny",
+                                        "top": 10,
+                                        "left": 20,
+                                        "width": 60
+                                    },
+                                    "autoProceed": true
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "correctChoiceRequired": true,
+                                    "audio": "RMS70_bunny_tap",
+                                    "images": [
+                                        {
+                                            "id": "bunny_picture",
+                                            "src": "bunny_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "apple",
+                                            "src": "apple.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "banana",
+                                            "src": "banana.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "orange",
+                                            "src": "orange.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "bunny",
+                                            "src": "bunny.png",
+                                            "top": 75,
+                                            "left": 84,
+                                            "correct": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_gotit",
+                                        "top": 20,
+                                        "left": 30,
+                                        "width": 60
+                                    },
+                                    "autoProceed": false
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "correctChoiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "car_picture",
+                                            "src": "car_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "triangle",
+                                            "src": "triangle.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "car",
+                                            "src": "car.png",
+                                            "top": 75,
+                                            "left": 28,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "square",
+                                            "src": "square.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "circle",
+                                            "src": "circle.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_readytoplay",
+                                        "top": 20,
+                                        "left": 30,
+                                        "width": 60
+                                    },
+                                    "autoProceed": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": "picture-trials",
+                            "kind": "choice",
+                            "sampler": "permute",
+                            "commonFrameProperties": {
+                                "backgroundColor": "white",
+                                    "nextButtonText": "Next",
+                                    "pauseKey": " ",
+                                    "pauseKeyDescription": " ",
+                                    "showReplayButton": true,
+                                    "pauseImage": "crayons.png",
+                                    "pauseAudio": "RMS70_crayons",
+                                    "canMakeChoiceBeforeAudioFinished": true,
+                                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                                    "audioTypes": [
+                                        "ogg",
+                                        "mp3",
+                                        "wav"
+                                    ],
+                                    "videoTypes": [
+                                        "webm",
+                                        "mp4"
+                                    ]
+                            },
+                            "frameOptions": [
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "door_picture",
+                                            "src": "door_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "window_blue",
+                                            "src": "window_blue.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "window_gray",
+                                            "src": "window_gray.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "door",
+                                            "src": "door.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "window_green",
+                                            "src": "window_green.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "bowl_picture",
+                                            "src": "bowl_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "mug_blue",
+                                            "src": "mug_blue.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "mug_white",
+                                            "src": "mug_white.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "mug_brown",
+                                            "src": "mug_brown.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "bowl",
+                                            "src": "bowl.png",
+                                            "top": 75,
+                                            "left": 84,
+                                            "correct": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "flower_picture",
+                                            "src": "flower_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "crayon",
+                                            "src": "crayon.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "pencil",
+                                            "src": "pencil.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "flower",
+                                            "src": "flower.png",
+                                            "top": 75,
+                                            "left": 56,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "pen",
+                                            "src": "pen.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "fish_picture",
+                                            "src": "fish_picture.png",
+                                            "top": 10,
+                                            "left": 25,
+                                            "width": 50,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "shower",
+                                            "src": "shower.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "pour",
+                                            "src": "pour.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "fish",
+                                            "src": "fish.png",
+                                            "top": 75,
+                                            "left": 56,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "wave",
+                                            "src": "wave.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "pot_picture",
+                                            "src": "pot_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "tooth",
+                                            "src": "tooth.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "toothbrush",
+                                            "src": "toothbrush.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "pot",
+                                            "src": "pot.png",
+                                            "top": 75,
+                                            "left": 56,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "toothpaste",
+                                            "src": "toothpaste.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "scissors_picture",
+                                            "src": "scissors_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "tiger",
+                                            "src": "tiger.png",
+                                            "top": 75,
+                                            "left": 0
+                                        },
+                                        {
+                                            "id": "giraffe",
+                                            "src": "giraffe.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "elephant",
+                                            "src": "elephant.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "scissors",
+                                            "src": "scissors.png",
+                                            "top": 75,
+                                            "left": 84,
+                                            "correct": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "tree_picture",
+                                            "src": "tree_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "tree",
+                                            "src": "tree.png",
+                                            "top": 75,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "cheese",
+                                            "src": "cheese.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "cupcake",
+                                            "src": "cupcake.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "hotdog",
+                                            "src": "hotdog.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "hand_picture",
+                                            "src": "hand_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "baseball",
+                                            "src": "baseball.png",
+                                            "top": 75,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "hand",
+                                            "src": "hand.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "basketball",
+                                            "src": "basketball.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "soccer",
+                                            "src": "soccer.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "horse_picture",
+                                            "src": "horse_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "butterfly",
+                                            "src": "butterfly.png",
+                                            "top": 75,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "horse",
+                                            "src": "horse.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "bird",
+                                            "src": "bird.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "bee",
+                                            "src": "bee.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "l_picture",
+                                            "src": "l_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "7",
+                                            "src": "7.png",
+                                            "top": 75,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "1",
+                                            "src": "1.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "4",
+                                            "src": "4.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "l",
+                                            "src": "l.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "trumpet_picture",
+                                            "src": "trumpet_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "book_red",
+                                            "src": "book_red.png",
+                                            "top": 75,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "trumpet",
+                                            "src": "trumpet.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "book_blue",
+                                            "src": "book_blue.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "book_brown",
+                                            "src": "book_brown.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                },
+                                {
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_prompt",
+                                    "images": [
+                                        {
+                                            "id": "giraffe_picture",
+                                            "src": "giraffe_picture.png",
+                                            "top": 10,
+                                            "left": 20,
+                                            "width": 60,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "coins_gold",
+                                            "src": "coins_gold.png",
+                                            "top": 75,
+                                            "left": 0,
+                                            "correct": true
+                                        },
+                                        {
+                                            "id": "coin_silver",
+                                            "src": "coin_silver.png",
+                                            "top": 75,
+                                            "left": 28
+                                        },
+                                        {
+                                            "id": "giraffe",
+                                            "src": "giraffe.png",
+                                            "top": 75,
+                                            "left": 56
+                                        },
+                                        {
+                                            "id": "dollar",
+                                            "src": "dollar.png",
+                                            "top": 75,
+                                            "left": 84
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {   
+                            "id": "picture-finished",
+                            "kind": "group",
+                             "commonFrameProperties": {
+                                "backgroundColor": "white",
+                                    "nextButtonText": "Next",
+                                    "pauseKey": " ",
+                                    "pauseKeyDescription": " ",
+                                    "showReplayButton": true,
+                                    "pauseImage": "crayons.png",
+                                    "pauseAudio": "RMS70_crayons",
+                                    "canMakeChoiceBeforeAudioFinished": true,
+                                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                                    "audioTypes": [
+                                        "ogg",
+                                        "mp3",
+                                        "wav"
+                                    ],
+                                    "videoTypes": [
+                                        "webm",
+                                        "mp4"
+                                    ]
+                            },
+                            "frameList": [
+                                {
+                                    "kind": "exp-lookit-video",
+                                    "video": {
+                                        "source": "RMS70_finished",
+                                        "top": 20,
+                                        "left": 30,
+                                        "width": 60
+                                    },
+                                    "autoProceed": true
+                                },
+                                {
+                                    "id": "picture-difficulty",
+                                    "kind": "exp-lookit-images-audio",
+                                    "choiceRequired": true,
+                                    "audio": "RMS70_difficulty",
+                                    "images": [
+                                        {
+                                            "id": "face",
+                                            "src": "floatinghead.png",
+                                            "top": 5,
+                                            "left":0,
+                                            "width": 20,
+                                            "nonChoiceOption": true
+                                        },
+                                        {
+                                            "id": "happy",
+                                            "src": "happy.png",
+                                            "top": 30,
+                                            "left": 0,
+                                            "width": 40
+                                        },
+                                        {
+                                            "id": "sad",
+                                            "src": "sad.png",
+                                            "top": 30,
+                                            "left": 60,
+                                            "width": 40
+                                        }
+                                    ],
+                                    "highlights": [
+                                        {
+                                            "range": [
+                                                5,
+                                                7
+                                            ],
+                                            "imageId": "happy"
+                                        },
+                                        {
+                                            "range": [
+                                                8,
+                                                10
+                                            ],
+                                            "imageId": "sad"
+                                        }
+                                    ],
+                                    "parentTextBlock": {
+                                        "text": "If your child is unable to click the image they have selected on their own, you may click the image for them.",
+                                        "title": "Parents"
+                                    }
+                                }
+                            ]
+                            
+                        }
+                    ]
+                }
+            ]
+        },
+        "final-dv": {
+            "kind": "group",
+            "commonFrameProperties": {
+                "backgroundColor": "white",
+                    "nextButtonText": "Next",
+                    "pauseKey": " ",
+                    "pauseKeyDescription": " ",
+                    "showReplayButton": true,
+                    "pauseImage": "crayons.png",
+                    "pauseAudio": "RMS70_crayons",
+                    "pauseText": "Game paused. Please press the spacebar to resume.",
+                    "baseDir": "https://raw.githubusercontent.com/rondeline/metanoise/master/",
+                    "audioTypes": [
+                        "ogg",
+                        "mp3",
+                        "wav"
+                    ],
+                    "videoTypes": [
+                        "webm",
+                        "mp4"
+                    ]
+            },
+            "frameList": [
+                {
+                    "kind": "exp-lookit-images-audio",
+                    "choiceRequired": true,
+                    "audio": "RMS70_evaluation",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 32,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "wheel",
+                            "src": "wheel.png",
+                            "top": 5,
+                            "left": 50,
+                            "width": 15,
+                            "duration": 15000,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "number_game",
+                            "src": "balls.png",
+                            "top": 35,
+                            "left": 0,
+                            "width": 35,
+                            "displayDelayMs": 18000
+                            
+                        },
+                        {
+                            "id": "picture_game",
+                            "src": "book_picture.png",
+                            "top": 35,
+                            "left": 65,
+                            "width": 35,
+                            "displayDelayMs": 18000
+                        }
+                    ],
+                    "highlights": [
+                        {
+                            "range": [
+                                20,
+                                21.5
+                            ],
+                            "imageId": "number_game"
+                        },
+                        {
+                            "range": [
+                                22,
+                                23.5
+                            ],
+                            "imageId": "picture_game"
+                        }
+                    ],
+                    "parentTextBlock": {
+                        "text": "If your child is unable to click the image they have selected on their own, you may click the image for them.",
+                        "title": "Parents"
+                    },
+                    "autoProceed": true
+                },
+                {
+                    "kind": "exp-lookit-images-audio",
+                    "choiceRequired": true,
+                    "audio": "RMS70_preference",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 32,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "wheel",
+                            "src": "wheel.png",
+                            "top": 5,
+                            "left": 50,
+                            "width": 15,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "number_game",
+                            "src": "balls.png",
+                            "top": 35,
+                            "left": 0,
+                            "width": 35
+                            
+                        },
+                        {
+                            "id": "picture_game",
+                            "src": "book_picture.png",
+                            "top": 35,
+                            "left": 65,
+                            "width": 35
+                        }
+                    ],
+                    "highlights": [
+                        {
+                            "range": [
+                                2.5,
+                                4
+                            ],
+                            "imageId": "number_game"
+                        },
+                        {
+                            "range": [
+                                4.5,
+                                6
+                            ],
+                            "imageId": "picture_game"
+                        }
+                    ],
+                    "parentTextBlock": {
+                        "text": "If your child is unable to click the image they have selected on their own, you may click the image for them.",
+                        "title": "Parents"
+                    },
+                    "autoProceed": true
+                },
+                {
+                    "kind": "exp-lookit-images-audio",
+                    "choiceRequired": true,
+                    "audio": "RMS70_postdv",
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 5,
+                            "left": 37,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        },
+                        {
+                            "id": "surprise",
+                            "src": "surprise.png",
+                            "top": 40,
+                            "left": 30,
+                            "width": 35,
+                            "displayDelayMs": 19000
+                        }
+                    ],
+                    "autoProceed": true
+                },
+                {
+                    "kind": "exp-lookit-video",
+                    "video": {
+                        "source": "RMS70_underthesea",
+                        "position": "fill"
+                    },
+                    "autoProceed": true
+                },
+                {
+                    "kind": "exp-lookit-images-audio",
+                    "audio": "RMS70_final",
+                    "choiceRequired": false,
+                    "images": [
+                        {
+                            "id": "face",
+                            "src": "floatinghead.png",
+                            "top": 25,
+                            "left": 32,
+                            "width": 20,
+                            "nonChoiceOption": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "instructions-and-test-media": {
+            "kind": "exp-lookit-instructions",
+            "blocks": [
+                {
+                    "title": "Instructions",
+                    "listblocks": [
+                        {
+                            "text": "In this session, your child will play two short games meant to understand your child's cognitive thinking."
+                        },
+                        {
+                            "text": "Your child will use the mouse or trackpad to select their response. If your child is unable to click on their own, you may click on the response they have selected. But remember to select your child's response- we want to know what they think!"
+                        },
+                        {
+                            "text": "Please do not turn down or turn off your device's volume during the games (Adjusting the volume before games is okay!)."
+                        },
+                        {
+                            "text": "If your child needs a break at any time, press the space bar to pause the session. Please note that if the session is paused during a video, that video will replay from the beginning when the session resumes."
+                        }
+                    ]
+                },
+                {
+                    "title": "Let's test your video!",
+                    "text": "This session will play videos. Please test whether you can view video by clicking the 'play' button on the video below.",
+                    "mediaBlock": {
+                        "text": "Look at that.",
+                        "isVideo": true,
+                        "sources": [{
+                                "src": "https://s3.amazonaws.com/lookitcontents/exp-physics-final/examples/7_control_same.mp4",
+                                "type": "video/mp4"
+                            },
+                            {
+                                "src": "https://s3.amazonaws.com/lookitcontents/exp-physics-final/examples/7_control_same.webm",
+                                "type": "video/webm"
+                            }
+                        ],
+                        "mustPlay": true,
+                        "warningText": "Please try playing the sample video."
+                    }
+                },
+                {
+                    "title": "And let's test your audio!",
+                    "text": "This session requires working audio. Please test your audio by clicking the button below and adjust your volume as needed.",
+                    "mediaBlock": {
+                        "text": "You should hear 'Ready to go?'",
+                        "isVideo": false,
+                        "sources": [{
+                                "src": "https://s3.amazonaws.com/lookitcontents/exp-physics-final/audio/ready.mp3",
+                                "type": "audio/mp3"
+                            },
+                            {
+                                "src": "https://s3.amazonaws.com/lookitcontents/exp-physics-final/audio/ready.ogg",
+                                "type": "audio/ogg"
+                            }
+                        ],
+                        "mustPlay": true,
+                        "warningText": "Please try playing the sample audio."
+                    }
+                }
+            ],
+            "nextButtonText": "Ready to play!"
+        },
+        "explain-survey": {
+            "kind": "exp-lookit-exit-survey",
+            "debriefing": {
+                "title": "Thank you for participating in this study. This work would not be possible without you!",
+                "blocks": [
+                    {
+                        "title": "What did my child do today?\n",
+                        "text": "The sounds around us are often diverse and sometimes meaningful. Sometimes these sounds are speech; other times these sounds are water running during bath time. Children can learn important information from the sounds in their environments, even when these sounds are not speech. These sounds can sometimes affect how well we accomplish goals. In this study, we were interested in whether preschool children understand that background noise can affect their cognitive performance. Your child played two cognitive games and then predicted their performance on each. Importantly, children played one of the games while background noise played. We expect that if children understand that background noise can affect performance, they should believe their performance was better when there was no background noise. \n \nThis study will help us understand how children use their environment for learning, even without explicit teaching. We were interested in what your child thought, so there were no right or wrong answers. Lots of other children have also participated in this study. Sometimes they responded a little similarly to your child and sometimes they responded a little differently. All answers are okay! \n \n If you want to learn more about how children think about the effects if noise, check out this article called <a href=https://escholarship.org/uc/item/1zd1m43h' target='_blank' rel='noopener'>Young children’s reasoning about the epistemic consequences of auditory noise</a>."
+                    },
+                    {
+                        "title": "How do I receive compensation?",
+                        "text": "To thank you for your participation, we'll be emailing you a $5 Amazon gift card - this should arrive in your inbox within the next week after we confirm your consent video and check that your child is in the age range for this study (If you don't hear from us by then, feel free to reach out!). If you participate again with another child in the age range, you'll receive one gift card per child. Please note that we cannot compensate participation from children outside of the age range."
+                    },
+                    {
+                        "title": "What if I have more questions?",
+                        "text": "For any questions or concerns about your child's participation in this study, please contact Rondeline Williams at rondeline.williams@stanford.edu."
+                    }
+                ]
+            }
+        },
+        "soundsearch-survey": {
+            "kind": "exp-lookit-survey",
+            "formSchema": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "race": {
+                            "type": "string",
+                            "title": "What is your child's race?",
+                            "enum": [
+                                "African/Black",
+                                "Asian/Pacific Islander",
+                                "Caucasian/White",
+                                "Hispanic/Latino",
+                                "Native/Indigenous Peoples",
+                                "Other",
+                                "Prefer Not to Say"
+                            ],
+                            "required": true
+                        },
+                        "english": {
+                            "type": "string",
+                            "title": "How often does your child hear English in a typical day?",
+                            "enum": [
+                                "None of the time",
+                                "Some of the time",
+                                "Most of the time",
+                                "All of the time"
+                            ],
+                            "required": true
+                        },
+                        "counting": {
+                            "type": "string",
+                            "title": "How would you describe your child's counting ability? Would you say they",
+                            "enum": [
+                                "Do not know their numbers and cannot count ",
+                                "Know their numbers but cannot count",
+                                "Know their numbers and can count to at least 5",
+                                "Know their numbers and can count to at least 10"
+                            ]
+                        },
+                        "education": {
+                            "type": "string",
+                            "title": "What is the highest level of education you or your partner (if applicable) has completed?",
+                            "enum": [
+                                "Less than high school",
+                                "High school or GED",
+                                "Some college",
+                                "Bachelor's degree",
+                                "Master's degree",
+                                "Graduate or professional degree"
+                            ]
+                        },
+                        "email:": {
+                            "type": "string",
+                            "title": "What is your email address? We will use it to send your Amazon gift card if your child meets the eligibility criteria:",
+                            "required": true
+                        }
+                    }
+                },
+                "options": {
+                    "fields": {
+                        "race": {
+                            "type": "checkbox",
+                            "sort": "false",
+                            "removeDefaultNone": true
+                        },
+                        "noiseExposure": {
+                            "type": "checkbox",
+                            "sort": false,
+                            "removeDefaultNone": true
+                        },
+                        "education": {
+                            "type": "checkbox",
+                            "sort": "false",
+                            "removeDefaultNone": true
+                        }
+                    }
+                }
+            }
+        }    
+    },
+    "sequence": [
+        "positioning",
+        "directions",
+        "picture-training",
+        "test-trials",
+        "instructions-and-test-media",
+        "video-config",
+        "welcome",
+        "video-consent",
+        "start-recording",
+        "directions",
+        "final-dv",
+        "stop-recording",
+        "soundsearch-survey",
+        "explain-survey"
+    ]
+}

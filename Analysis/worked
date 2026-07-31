@@ -1,0 +1,262 @@
+const penguin = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `
+        <div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 20px;">
+            <img src="${media.penguin}" style="width: clamp(180px, 40vw, 500px); max-width: 60vw; height: auto;">
+        </div>
+    `,
+    choices: order.box_choices.map(choice =>
+        `<div style="display: flex; justify-content: center; align-items: center; padding: 8px;">
+            <img src="${media[choice]}" style="width: clamp(90px, 32vw, 300px); max-width: 36vw; height: auto;">
+        </div>`
+    ), 
+    button_html: (choice) => `
+        <button style="
+            background: none; 
+            border: none; 
+            padding: 0;
+            margin: 0 clamp(16px, 9vw, 110px);
+            cursor: pointer;
+        ">
+            ${choice}
+        </button>`,
+    on_load: () => {
+        prompt_audio.play();
+    },
+    on_finish: (trialData) => {
+        prompt_audio.pause();
+        prompt_audio.currentTime = 0;
+        
+        trialData.selected_item = order.box_choices[trialData.response];
+        trialData.choice_0 = order.box_choices[0];
+        trialData.choice_1 = order.box_choices[1]
+    },
+    data: {
+        stimulus_item: 'penguin'
+    },
+    response_ends_trial: true
+};
+
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  ">
+    <div style="
+      padding: 8px;
+      margin: 0 clamp(16px, 7vw, 110px);
+    ">
+      <img
+        src="${media.box}"
+        id="a"
+        style="
+          width: clamp(90px, 32vw, 240px);
+          max-width: 36vw;
+          height: auto;
+        "
+      >
+    </div>
+
+    <div style="
+      padding: 8px;
+      margin: 0 clamp(16px, 7vw, 110px);
+    ">
+      <img
+        src="${media.box}"
+        id="b"
+        style="
+          width: clamp(90px, 32vw, 240px);
+          max-width: 36vw;
+          height: auto;
+        "
+      >
+    </div>
+  </div>
+`,
+
+
+const animals_vehicles_intro = {
+  type: jsPsychHtmlButtonResponse,
+
+  stimulus: `
+    <div style="
+    position: relative;
+    width: 100%;
+    height: min(45vw, 500px);
+    min-height: 180px;
+    margin-top: 5px;
+  ">
+    <img
+      src="${media.animals}"
+      id="animals"
+      style="
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: clamp(180px, 40vw, 500px);
+        max-width: 60vw;
+        max-height: 100%;
+        height: auto;
+      "
+    >
+
+    <img
+      src="${media.vehicles}"
+      id="vehicles"
+      style="
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: clamp(180px, 40vw, 500px);
+        max-width: 60vw;
+        max-height: 100%;
+        height: auto;
+      "
+    >
+
+    <img
+      src="${media.green}"
+      id="green"
+      style="
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: clamp(180px, 40vw, 500px);
+        max-width: 60vw;
+        max-height: 100%;
+        height: auto;
+      "
+    >
+  </div>
+
+    <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    ">
+    <div style="
+      padding: 8px;
+      margin: 0 clamp(16px, 7vw, 110px);
+    ">
+      <img
+        src="${media.box}"
+        id="a"
+        style="
+          width: clamp(90px, 32vw, 240px);
+          max-width: 36vw;
+          height: auto;
+        "
+      >
+    </div>
+
+    <div style="
+      padding: 8px;
+      margin: 0 clamp(16px, 7vw, 110px);
+    ">
+      <img
+        src="${media.box}"
+        id="b"
+        style="
+          width: clamp(90px, 32vw, 240px);
+          max-width: 36vw;
+          height: auto;
+        "
+      >
+    </div>
+  </div>
+`,
+
+  choices: [],
+
+  on_load: () => {
+    document.getElementById('animals').style.display = 'none';
+    document.getElementById('vehicles').style.display = 'none';
+    document.getElementById('green').style.display = 'none';
+
+    // ANIMALS
+    setTimeout(() => {
+      document.getElementById('animals').style.display = 'block';
+    }, 6500);
+
+    setTimeout(() => {
+      const animalBox = document.getElementById(order.animal_box);
+
+      if (animalBox) {
+        animalBox.style.border = '6px solid blue';
+      }
+    }, 8000);
+
+    setTimeout(() => {
+      const animalBox = document.getElementById(order.animal_box);
+
+      if (animalBox) {
+        animalBox.style.border = 'none';
+      }
+    }, 9500);
+
+    setTimeout(() => {
+      document.getElementById('animals').style.display = 'none';
+    }, 10000);
+
+    // VEHICLES
+    setTimeout(() => {
+      document.getElementById('vehicles').style.display = 'block';
+    }, 10500);
+
+    setTimeout(() => {
+      const vehicleBox = document.getElementById(order.vehicle_box);
+
+      if (vehicleBox) {
+        vehicleBox.style.border = '6px solid blue';
+      }
+    }, 12500);
+
+    setTimeout(() => {
+      const vehicleBox = document.getElementById(order.vehicle_box);
+
+      if (vehicleBox) {
+        vehicleBox.style.border = 'none';
+      }
+    }, 14500);
+
+    setTimeout(() => {
+      document.getElementById('vehicles').style.display = 'none';
+    }, 15000);
+
+    // GREEN
+    setTimeout(() => {
+      document.getElementById('green').style.display = 'block';
+    }, 16500);
+
+    setTimeout(() => {
+      const vehicleBox = document.getElementById(order.vehicle_box);
+
+      if (vehicleBox) {
+        vehicleBox.style.border = '6px solid blue';
+      }
+    }, 19500);
+
+    setTimeout(() => {
+      const vehicleBox = document.getElementById(order.vehicle_box);
+
+      if (vehicleBox) {
+        vehicleBox.style.border = 'none';
+      }
+    }, 21500);
+
+    setTimeout(() => {
+      document.getElementById('green').style.display = 'none';
+    }, 22500);
+  },
+
+  response_ends_trial: false,
+  trial_duration: 23500
+};
