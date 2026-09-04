@@ -9,7 +9,14 @@ library(rstanarm)
 library(emmeans)
 
 ## Read Data 
-data <- fromJSON("predictability_12525.json")
+data <- fromJSON("predictability_81726.json")
+
+data <- data |>
+  mutate(
+    exp_data = map(
+      exp_data,
+      ~ {.x$response <- as.list(.x$response)
+        .x}))
 
 unnest_data <- data |> 
   unnest(exp_data, names_sep = "_")
@@ -23,14 +30,17 @@ flat <- unnest_data |>
 
 tidy_data <- flat |> 
   select(child_hashed_id, response_date_created, response_eligibility, child_age_rounded, child_gender, child_condition_list, exp_data_trial_type, exp_data_trial_index, exp_data_response, exp_data_condition_label, exp_data_condition_number, exp_data_stimulus_item, exp_data_selected_item) |>
-  filter(#as_datetime(response_date_created)>=as_datetime("2025-04-30"), 
+  filter(as_datetime(response_date_created)>=as_datetime("2026-08-01"),
          exp_data_trial_type!="survey") |>
   unnest(c(response_eligibility, 
          response_date_created,
          exp_data_response,
          exp_data_stimulus_item)) |> 
   mutate(age=round(as.numeric(child_age_rounded)/365,2)) |> 
-  select(child_hashed_id, response_date_created, response_eligibility, age, everything())
+  select(child_hashed_id, response_date_created, response_eligibility, age, everything()) |>
+  group_by(child_hashed_id) |>
+  fill(exp_data_condition_label, .direction = "downup") |>
+  ungroup()
 
 ## Renaming 
 renaming_data <- tidy_data |> 
@@ -86,66 +96,66 @@ survey <- flat |>
 join_data <- renaming_data |> 
   left_join(survey, by = "child_hashed_id") |> 
   filter(!is.na(stimulus_item)) |> 
-  mutate(
-    # Recode conditions to readable labels
-    condition_label = case_when(
-      condition_label == "uphorn" ~ "Unpredictable Noise",
-      condition_label == "phorn" ~ "Predictable Noise",
-      condition_label == "pstore" ~ "Predictable Speech",
-      condition_label == "upstore" ~ "Unpredictable Speech",
-      condition_label == "silence" ~ "Silence"
-    ),
-    
-    # Create age group
-    age_years = case_when(
-      age >= 5 & age < 6 ~ 5,
-      age >= 6 & age < 7 ~ 6,
-      age >= 7 & age < 8 ~ 7
-    ),
-    
-    # Logical flag for rows we want to keep
-    keep_row = case_when(
-      condition_label %in% c("Predictable Noise", "Predictable Speech",
-                             "Unpredictable Noise", "Unpredictable Speech") &
-        as.Date(date_created) >= as.Date("2025-12-03") ~ TRUE,
-      condition_label == "Silence" &
-        as.Date(date_created) >= as.Date("2025-11-20") ~ TRUE,
-      TRUE ~ FALSE
-    )
-  ) |> 
-  filter(keep_row) |>   
-  select(-keep_row)
-
-# Analysis
-full_analysis <- join_data |>
-  filter(stimulus_item != "penguin",
-         stimulus_item != "car") |> 
-  mutate(answer = case_when(stimulus_item == "car" ~ "box_car",
+  mutate(condition_label = case_when(condition_label == "uphorn" ~ "Unpredictable Noise",
+                                     condition_label == "phorn" ~ "Predictable Noise",
+                                     condition_label == "pstore" ~ "Predictable Speech",
+                                     condition_label == "upstore" ~ "Unpredictable Speech",
+                                     condition_label == "silence" ~ "Silence"),
+         answer = case_when(stimulus_item == "alligator" ~ "box_car",
                             stimulus_item == "ambulance" ~ "box_car",
+                            stimulus_item == "bear_green" ~ "box_car",
+                            stimulus_item == "bear_purple" ~ "box_dog",
+                            stimulus_item == "bird" ~ "box_car",
+                            stimulus_item == "bunny" ~ "box_dog",
                             stimulus_item == "bus" ~ "box_car",
-                            stimulus_item == "truck" ~ "box_car",
+                            stimulus_item == "butterfly" ~ "box_car",
+                            stimulus_item == "car" ~ "box_car",
+                            stimulus_item == "car_blue" ~ "box_car",
+                            stimulus_item == "car_orange" ~ "box_car",
+                            stimulus_item == "cow" ~ "box_dog",
+                            stimulus_item == "dinosaur" ~ "box_car",
+                            stimulus_item == "firetruck" ~ "box_car",
+                            stimulus_item == "fish" ~ "box_car",
+                            stimulus_item == "giraffe" ~ "box_dog",
                             stimulus_item == "horse" ~ "box_dog",
                             stimulus_item == "lion" ~ "box_dog",
-                            stimulus_item == "turtle" ~ "box_car",
-                            stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "butterfly" ~ "box_car",
+                            stimulus_item == "lizard" ~ "box_car",
+                            stimulus_item == "penguin" ~ "box_dog",
                             stimulus_item == "pickup" ~ "box_car",
-                            stimulus_item == "snake" ~ "box_car",
-                            stimulus_item == "car_blue" ~ "box_car",
-                            stimulus_item == "giraffe" ~ "box_dog",
-                            stimulus_item == "car_orange" ~ "box_car",
+                            stimulus_item == "pig" ~ "box_dog",
                             stimulus_item == "police" ~ "box_car",
                             stimulus_item == "tiger" ~ "box_dog",
-                            stimulus_item == "bunny" ~ "box_dog",
-                            stimulus_item == "firetruck" ~ "box_car",
+                            stimulus_item == "truck" ~ "box_car",
                             stimulus_item == "truck_green" ~ "box_car",
-                            stimulus_item == "fish" ~ "box_car"),
+                            stimulus_item == "turtle" ~ "box_car",
+                            stimulus_item == "snake" ~ "box_car"),
+         age_years = case_when(age >= 5 & age < 6 ~ 5,
+                               age >= 6 & age < 7 ~ 6,
+                               age >= 7 & age < 8 ~ 7),
          correct = case_when(selected_item == answer ~ 1,
                              TRUE ~ 0),
          predictability = case_when(
            condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
            condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
            TRUE ~ "Silence")) |> 
+  filter(!is.na(age_years))
+         # keep_row = case_when(condition_label %in% c("Predictable Noise",
+         #                                             "Predictable Speech",
+         #                                             "Unpredictable Noise",
+         #                                             "Unpredictable Speech") &
+         #                        as.Date(date_created) >= as.Date("2025-12-03") ~ TRUE,
+         #                      condition_label == "Silence" &
+         #                        as.Date(date_created) >= as.Date("2025-11-20") ~ TRUE,
+         #                      TRUE ~ FALSE)) |>
+  # filter(keep_row) |>   
+  # select(-keep_row)
+
+# Analysis
+full_analysis <- join_data |>
+  filter(stimulus_item != "penguin",
+         stimulus_item != "car",
+         stimulus_item != "bear_green",
+         stimulus_item != "bear_purple") |> 
   group_by(predictability) |> 
   summarise(mean_correct = mean(correct),
             ci_l = binom.bayes(x = sum(correct), n = n())$lower,
@@ -168,33 +178,9 @@ ggplot(full_analysis, aes(x = predictability, y = mean_correct, fill = predictab
 
 full_analysis_trial <- join_data |>
   filter(stimulus_item != "penguin",
-         stimulus_item != "car") |> 
-  mutate(answer = case_when(stimulus_item == "car" ~ "box_car",
-                            stimulus_item == "ambulance" ~ "box_car",
-                            stimulus_item == "bus" ~ "box_car",
-                            stimulus_item == "truck" ~ "box_car",
-                            stimulus_item == "horse" ~ "box_dog",
-                            stimulus_item == "lion" ~ "box_dog",
-                            stimulus_item == "turtle" ~ "box_car",
-                            stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "butterfly" ~ "box_car",
-                            stimulus_item == "pickup" ~ "box_car",
-                            stimulus_item == "snake" ~ "box_car",
-                            stimulus_item == "car_blue" ~ "box_car",
-                            stimulus_item == "giraffe" ~ "box_dog",
-                            stimulus_item == "car_orange" ~ "box_car",
-                            stimulus_item == "police" ~ "box_car",
-                            stimulus_item == "tiger" ~ "box_dog",
-                            stimulus_item == "bunny" ~ "box_dog",
-                            stimulus_item == "firetruck" ~ "box_car",
-                            stimulus_item == "truck_green" ~ "box_car",
-                            stimulus_item == "fish" ~ "box_car"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0),
-         predictability = case_when(
-           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
-           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
-           TRUE ~ "Silence")) 
+         stimulus_item != "car",
+         stimulus_item != "bear_green",
+         stimulus_item != "bear_purple")
   
 full_analysis_trial$predictability <- factor(full_analysis_trial$predictability, levels = c('Silence', 'Predictable', 'Unpredictable'))
 
@@ -209,28 +195,17 @@ summary(full_analysis_model,
 full_analysis_emmeans <- emmeans(full_analysis_model, pairwise ~ predictability)
 
 target_analysis <- join_data |> 
-  filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |> 
-  mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "turtle" ~ "box_car",
-                            stimulus_item == "butterfly" ~ "box_car",
-                            stimulus_item == "snake" ~ "box_car",
-                            stimulus_item == "fish" ~ "box_car"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0)) |> 
-  group_by(condition_label) |> 
+  filter(stimulus_item %in% c("alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle")) |>
+  group_by(predictability) |> 
   summarise(mean_correct = mean(correct),
             ci_l = binom.bayes(x = sum(correct), n = n())$lower,
             ci_u = binom.bayes(x = sum(correct), n = n())$upper,
             n = n()) |> 
-  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE),
-         condition_label = case_when(
-           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
-           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
-           TRUE ~ "Silence"))
+  mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
 
 View(target_analysis)
 
-ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+ggplot(target_analysis, aes(x = predictability, y = mean_correct, fill = predictability)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
   geom_errorbar(aes(ymin = ci_l, ymax = ci_u), width = 0.2) +
   ylim(0,1) +
@@ -243,24 +218,13 @@ ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condit
   theme(legend.position = "none")
 
 target_analysis_trial <- join_data |> 
-  filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |> 
-  mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "turtle" ~ "box_car",
-                            stimulus_item == "butterfly" ~ "box_car",
-                            stimulus_item == "snake" ~ "box_car",
-                            stimulus_item == "fish" ~ "box_car"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0),
-         predictability = case_when(
-           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
-           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
-           TRUE ~ "Silence"))
+  filter(stimulus_item %in% c("alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle"))
 
 target_analysis_trial_participant <- target_analysis_trial |> 
   ungroup() |> 
   group_by(child_hashed_id) |> 
   reframe(predictability = predictability,
-          mean_correct = mean(correct)) |>
+          mean_correct = mean(correct)) 
   
 View(target_analysis_trial_participant)
 
@@ -276,38 +240,17 @@ target_analysis_trial_summary <- summary(target_analysis_model,
 
 nontarget_analysis <- join_data |> 
   filter(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion", "pickup", "car_blue", "giraffe", 
-                              "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow")) |> 
-  mutate(answer = case_when(stimulus_item == "bus" ~ "box_car",
-                            stimulus_item == "ambulance" ~ "box_car",
-                            stimulus_item == "truck" ~ "box_car",
-                            stimulus_item == "horse" ~ "box_dog",
-                            stimulus_item == "lion" ~ "box_dog",
-                            stimulus_item == "pickup" ~ "box_car",
-                            stimulus_item == "car_blue" ~ "box_car",
-                            stimulus_item == "giraffe" ~ "box_dog",
-                            stimulus_item == "car_orange" ~ "box_car",
-                            stimulus_item == "police" ~ "box_car",
-                            stimulus_item == "tiger" ~ "box_dog",
-                            stimulus_item == "bunny" ~ "box_dog",
-                            stimulus_item == "firetruck" ~ "box_car",
-                            stimulus_item == "truck_green" ~ "box_car",
-                            stimulus_item == "cow" ~ "box_dog"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0)) |> 
-  group_by(condition_label) |> 
+                              "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow", "pig")) |> 
+  group_by(predictability) |> 
   summarise(mean_correct = mean(correct),
             ci_l = binom.bayes(x = sum(correct), n = n())$lower,
             ci_u = binom.bayes(x = sum(correct), n = n())$upper,
             n = n()) |> 
-  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE),
-         condition_label = case_when(
-           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
-           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
-           TRUE ~ "Silence"))
+  mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
 
 View(nontarget_analysis)
 
-ggplot(nontarget_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+ggplot(nontarget_analysis, aes(x = predictability, y = mean_correct, fill = predictability)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
   geom_errorbar(aes(ymin = ci_l, ymax = ci_u), width = 0.2) +
   ylim(0,1) +
@@ -321,28 +264,7 @@ ggplot(nontarget_analysis, aes(x = condition_label, y = mean_correct, fill = con
 
 nontarget_analysis_trial <- join_data |> 
   filter(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion", "pickup", "car_blue", "giraffe", 
-                              "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow")) |> 
-  mutate(answer = case_when(stimulus_item == "bus" ~ "box_car",
-                            stimulus_item == "ambulance" ~ "box_car",
-                            stimulus_item == "truck" ~ "box_car",
-                            stimulus_item == "horse" ~ "box_dog",
-                            stimulus_item == "lion" ~ "box_dog",
-                            stimulus_item == "pickup" ~ "box_car",
-                            stimulus_item == "car_blue" ~ "box_car",
-                            stimulus_item == "giraffe" ~ "box_dog",
-                            stimulus_item == "car_orange" ~ "box_car",
-                            stimulus_item == "police" ~ "box_car",
-                            stimulus_item == "tiger" ~ "box_dog",
-                            stimulus_item == "bunny" ~ "box_dog",
-                            stimulus_item == "firetruck" ~ "box_car",
-                            stimulus_item == "truck_green" ~ "box_car",
-                            stimulus_item == "cow" ~ "box_dog"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0),
-         predictability = case_when(
-           condition_label %in% c("Unpredictable Noise", "Unpredictable Speech") ~ "Unpredictable",
-           condition_label %in% c("Predictable Noise", "Predictable Speech") ~ "Predictable",
-           TRUE ~ "Silence"))
+                              "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow", "pig"))
 
 nontarget_analysis_model <- stan_glmer(correct ~ predictability + (1 | child_hashed_id),
                                     family = binomial,
@@ -355,53 +277,30 @@ nontarget_analysis_trial_summary <- summary(nontarget_analysis_model,
 nontarget_analysis_emmeans <- emmeans(nontarget_analysis_model, pairwise ~ predictability)
 
 nontarget_analysis_age <- join_data |> 
-  filter(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion")) |> 
-  mutate(answer = case_when(stimulus_item == "bus" ~ "box_car",
-                            stimulus_item == "ambulance" ~ "box_car",
-                            stimulus_item == "truck" ~ "box_car",
-                            stimulus_item == "horse" ~ "box_dog",
-                            stimulus_item == "lion" ~ "box_dog",
-                            stimulus_item == "pickup" ~ "box_car",
-                            stimulus_item == "car_blue" ~ "box_car",
-                            stimulus_item == "giraffe" ~ "box_dog",
-                            stimulus_item == "car_orange" ~ "box_car",
-                            stimulus_item == "police" ~ "box_car",
-                            stimulus_item == "tiger" ~ "box_dog",
-                            stimulus_item == "bunny" ~ "box_dog",
-                            stimulus_item == "firetruck" ~ "box_car",
-                            stimulus_item == "truck_green" ~ "box_car",
-                            stimulus_item == "cow" ~ "box_dog"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0)) |> 
-  group_by(condition_label, age_years) |> 
+  filter(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion", "pickup", "car_blue", "giraffe", 
+                              "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow", "pig")) |>
+  group_by(predictability, age_years) |> 
   summarise(mean_correct = mean(correct),
             ci_l = binom.bayes(x = sum(correct), n = n())$lower,
             ci_u = binom.bayes(x = sum(correct), n = n())$upper,
             n = n()) |> 
-  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE))
+  mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
 
 View(nontarget_analysis_age)
 
 target_analysis_age <- join_data |> 
-  filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |>
-  mutate(answer = case_when(stimulus_item == "bird" ~ "box_car",
-                            stimulus_item == "turtle" ~ "box_car",
-                            stimulus_item == "butterfly" ~ "box_car",
-                            stimulus_item == "snake" ~ "box_car",
-                            stimulus_item == "fish" ~ "box_car"),
-         correct = case_when(selected_item == answer ~ 1,
-                             TRUE ~ 0)) |> 
-  group_by(condition_label, age_years) |> 
+  filter(stimulus_item %in% c("alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle")) |> 
+  group_by(predictability, age_years) |> 
   summarise(mean_correct = mean(correct),
             ci_l = binom.bayes(x = sum(correct), n = n())$lower,
             ci_u = binom.bayes(x = sum(correct), n = n())$upper,
             n = n()) |> 
-  mutate(condition_label = fct_reorder(condition_label, mean_correct, .desc = FALSE))
+  mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
 
 View(target_analysis_age)
   
 # Data Viz
-ggplot(target_analysis, aes(x = condition_label, y = mean_correct, fill = condition_label)) +
+ggplot(target_analysis, aes(x = predictability, y = mean_correct, fill = predictability)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.2)) +
   ylim(0,1) +
   xlab("Condition") +
@@ -459,7 +358,7 @@ presentation_order <- join_data |>
 
 
 age_analysis <- join_data |> 
-  filter(stimulus_item %in% c("bird", "turtle", "butterfly", "snake", "fish")) |> 
+  filter(stimulus_item %in% c("alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle")) |> 
   mutate(answer = "box_car",
          correct = as.integer(selected_item == answer),
          predictability = case_when(
@@ -476,7 +375,39 @@ age_analysis <- join_data |>
     n = n()) |> 
   mutate(predictability = fct_reorder(predictability, mean_correct, .desc = FALSE))
 
-View(age_analysis)
+# Individual Trial Performance
+trial_performance <- join_data |> 
+  mutate(switch = case_when(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion", "pickup", "car_blue", "giraffe", 
+                                                 "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow", "pig") ~ "nonswitch",
+                            stimulus_item %in% c("alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle") ~ "switch")) |>
+  filter(!is.na(switch)) |> 
+  select(child_hashed_id, predictability, stimulus_item, switch, correct, everything())
+
+View(trial_performance)
+
+# Comprehension Check
+comprehension_check <- join_data |>
+  mutate(trial = case_when(stimulus_item %in% c("penguin", "car") ~ "training",
+                           stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion", "pickup", "car_blue", "giraffe", 
+                                                "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow", "pig",
+                                                "alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle") ~ "test",
+                           stimulus_item %in% c("bear_green", "bear_purple") ~ "comprehension"),
+         switch = case_when(stimulus_item %in% c("bus", "ambulance", "truck", "horse", "lion", "pickup", "car_blue", "giraffe", 
+                                                 "car_orange", "police", "tiger", "bunny", "firetruck", "truck_green", "cow", "pig") ~ "nonswitch",
+                            stimulus_item %in% c("alligator", "bird", "butterfly", "dinosaur", "fish", "lizard", "snake", "turtle") ~ "switch")) |>
+  filter(trial != "training") |> 
+  group_by(child_hashed_id, predictability) |>
+  summarise(comprehension = mean(correct[trial == "comprehension"], na.rm = TRUE),
+            bear_green = correct[stimulus_item == "bear_green"][1],
+            bear_purple = correct[stimulus_item == "bear_purple"][1],
+            test_overall = mean(correct[trial == "test"], na.rm = TRUE),
+            nonswitch = mean(correct[trial == "test" & switch == "nonswitch"], na.rm = TRUE),
+            switch = mean(correct[trial == "test" & switch == "switch"], na.rm = TRUE),
+            ci_l = binom.bayes(x = sum(correct), n = n())$lower,
+            ci_u = binom.bayes(x = sum(correct), n = n())$upper,
+            n = n())
+  
+View(comprehension_check)
 
 # Demographic Data
 race <- join_data |> 
